@@ -1,0 +1,95 @@
+.s-services
+
+  .s-services__container
+    box-sizing: border-box
+    padding: 15px
+    display: flex
+    align-items: flex-end
+
+  .s-services__left
+    flex-basis: 45%
+    margin-right: 15px
+    flex-grow: 0
+
+    .s-services__article
+      &:first-child
+        height: 240px
+
+      &:nth-child(2),
+      &:last-child
+        height: 201px
+
+  .s-services__right
+    flex-basis: calc(100% - (45% + 15px))
+    flex-grow: 1
+
+    .s-services__article
+
+      &:first-child
+        height: 419px
+
+        &.article
+          .article__cover
+            justify-content: flex-end
+
+            > div
+              margin-top: 15px
+
+      &:last-child
+        height: 201px
+
+  .s-services__article
+    &.article
+      position: relative
+
+      + .s-services__article
+        margin-top: 15px
+
+      .article__thumbnail
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+      .article__cover
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        display: flex
+        padding: 45px 0 0 50px
+        flex-direction: column
+
+        > div
+          margin-top: auto
+          display: flex
+          justify-content: flex-end
+
+    .article__button
+      box-sizing: border-box
+      padding: 15px 20px
+      background-color: #ffd42d
+      transition: all .3s ease-in-out
+      text-decoration: none
+      color: #fff
+      font-size: 13px
+      text-transform: uppercase
+      font-family: 'Roboto', sans-serif
+      font-weight: bold
+
+      &:hover
+        background-color: #ffd42d * .9
+
+    .article__title
+      font-family: 'Roboto', sans-serif
+      font-weight: 500
+      font-style: normal
+      color: #fff
+      font-size: 24px
+      margin: 0
+
+    .article__excerpt
+      font-size: 15px
+      color: #fff
+      max-width: 400px
+      width: 100%

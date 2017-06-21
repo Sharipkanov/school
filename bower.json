@@ -1,0 +1,11 @@
+{
+  "name": "gulp_project",
+  "version": "0.1.15",
+  "description": "Gulp project builder",
+  "author": "qube.kz",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize-css": "^7.0.0",
+    "owl.carousel": "^2.2.1"
+  }
+}
