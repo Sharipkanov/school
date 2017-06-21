@@ -1,6 +1,48 @@
 .footer
-  background-color: #000
-  padding: 35px 0 25px 0
+  margin-top: auto
+  padding-top: 30px
+  box-sizing: border-box
+
+  .container
+    background-color: #000
+
+  .footer__top
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+    > div
+      flex-grow: 1
+      margin-top: 35px
+      flex-shrink: 2
+
+      &:last-child
+        flex-grow: 0
+        flex-basis: 130px
+
+      &:nth-last-child(2)
+        flex-shrink: 1
+
+      @media screen and (max-width: 1270px)
+        flex-shrink: 1
+
+        &:not(:last-child)
+          flex-basis: 50%
+          flex-shrink: 1
+
+        &:last-child
+          flex-basis: 100%
+
+      @media screen and (max-width: 570px)
+        margin-top: 25px
+        &:not(:last-child)
+          flex-basis: 100%
+
+        &:last-child
+          margin-bottom: 35px
+
+        + div
+          border-top: 1px solid #61605A
 
   .footer__copyright
     font-size: 12px
@@ -10,19 +52,36 @@
     font-weight: 300
     font-style: normal
     text-align: right
+    padding: 25px 0
+    box-sizing: border-box
+
+    @media screen and (max-width: 570px)
+      text-align: left
+      border-top: 1px solid #61605A
 
   .footer__list
     list-style: none
     margin: 0
+    padding: 0
 
     > li
       font-family: 'Roboto', sans-serif
       font-size: 20px
       font-weight: normal
       color: #fff
+      display: flex
+      align-items: center
+
+      + li
+        margin-top: 5px
 
       &:first-child
         margin-bottom: 30px
+        line-height: 45px
+
+        @media screen and (max-width: 570px)
+          margin-bottom: 10px
+          box-sizing: border-box
 
       > a
         font-family: 'Roboto', sans-serif
@@ -33,3 +92,6 @@
 
         &:hover
           text-decoration: underline
+
+        + a
+          margin-left: 10px

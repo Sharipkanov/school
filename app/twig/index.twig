@@ -3,9 +3,103 @@
 {% block pageTitle %}Главная страница{% endblock %}
 
 {% block content %}
-    {% include 'sections/s-welcome.twig' %}
+    <div class="fw-pt-40 fw-pt-80@m fw-pt-150@l fw-pb-40 fw-pb-80@m fw-bg-cover fw-bg-center fw-bg-no-repeat" style="background-image: url('images/welcome-image.jpg')">
+        <div class="container">
+            <div class="fw-pl-25@m fw-pl-80@l">
+                <div class="fw-max-width-700">
+                    <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-52@m fw-line-height-1-2">Онлайн-обучение английскому языку из любой точки планеты</p>
+                    <p class="fw-font-roboto fw-fz-18 fw-color-white fw-mt-30">Делаем изучение языка интересным и эффективным!</p>
+                    <div class="fw-mt-30 fw-mt-50@m"><a href="#" class="button button-red button-center">Записаться на пробный урок</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {% include 'sections/s-advantages.twig' %}
 
     {% include 'sections/s-services.twig' %}
+
+    {% include 'sections/s-school-facts.twig' %}
+
+    <div class="fw-mt-30">
+        <div class="container">
+            <p class="fw-font-roboto fw-font-bold fw-color-black fw-fz-24 fw-mb-30 fw-text-center">Онлайн курсы в школе Веры Горпинич: цифры и факты</p>
+        </div>
+        <div class="fw-pr-15 fw-pr-30@s fw-pl-15 fw-pl-30@s fw-pt-30 fw-pb-30 fw-bg-color-blue">
+            <div class="container">
+                <div class="fw-grid fw-grid-30">
+                    <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-text-center">
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-fz-50 fw-mb-20 fw-color-white">3</p>
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-yellow fw-fz-18 fw-mb-20">месяца</p>
+                        <p class="fw-font-gotham-pro fw-fz-14 fw-color-white">столько длится средний курс онлайн</p>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-text-center">
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-fz-50 fw-mb-20 fw-color-white">15</p>
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-yellow fw-fz-18 fw-mb-20">минут в день</p>
+                        <p class="fw-font-gotham-pro fw-fz-14 fw-color-white">своего времени Вы тратите на занятия</p>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-text-center">
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-fz-50 fw-mb-20 fw-color-white">300</p>
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-yellow fw-fz-18 fw-mb-20">минут в неделю</p>
+                        <p class="fw-font-gotham-pro fw-fz-14 fw-color-white">в среднем тратит наш учащийся</p>
+                    </div>
+                    <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-text-center">
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-fz-50 fw-mb-20 fw-color-white">10 000</p>
+                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-yellow fw-fz-18 fw-mb-20">довольных учеников</p>
+                        <p class="fw-font-gotham-pro fw-fz-14 fw-color-white">закончили наши курсы с успехом</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s-vg-courses">
+            <div class="container">
+                <div class="s-vg-courses__grid">
+                    <div>
+                        {% include 'panels/p-user.twig' with {src: 'images/vera-gorpinich-thumbnail.jpg', name: 'Вера Горпинич' } %}
+                    </div>
+                    <div>
+                        <div class="fw-pl-15 fw-pl-60@m fw-pt-40 fw-pt-60@m fw-pb-40 fw-pb-60@m fw-pr-15 fw-pr-30@m">
+                            <p class="fw-font-medium fw-fz-24">Автор курса</p>
+                            <div class="fw-flex fw-mt-30">
+                                <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt=""></div>
+                                <p class="fw-flex-grow">Основатель онлайн-школы «Школа Веры Горпинич», выпускниками которой стали более 6 000 человек</p>
+                            </div>
+                            <div class="fw-flex fw-mt-30">
+                                <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt=""></div>
+                                <p>Несколько лет жила за границей, имеет большой опыт общения с носителями языка, регулярно практикуется с англоязычными друзьями, чтобы быть в курсе его динамики. Автор курсов быстрого и эффективного изучения разговорного английского, делового английского, английского для туристов</p>
+                            </div>
+                            <div class="fw-flex fw-mt-30">
+                                <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt=""></div>
+                                <p>Регулярно проводит бесплатные семинары, которые посетили более 50 000 человек</p>
+                            </div>
+                        </div>
+                        <div class="s-vg-courses__media"><iframe width="100%" height="350" src="https://www.youtube.com/embed/5h-023dGWSI" frameborder="0" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fw-mt-15">
+        {% include 'sections/s-ask-question.twig' %}
+    </div>
+
+    <div class="fw-mt-15">
+        <div class="container">
+            <div class="fw-bg-color-white fw-pt-40 fw-pb-60 fw-pr-15 fw-pl-15 fw-pl-80@m">
+                <div class="fw-grid fw-grid-middle fw-grid-20 fw-grid-50@l">
+                    <div class="fw-width-1-1 fw-width-2-5@l"><p class="fw-font-roboto fw-font-medium fw-fz-24 fw-color-black">Школа иностранных языков как школа успеха!</p></div>
+                    <div class="fw-width-1-1 fw-width-3-5@l"><p class="fw-font-merriweather fw-font-italic fw-fz-15 fw-color-black fw-line-height-1-5">Знание иностранного языка рушит барьеры, делает цели достижимыми, а жизнь – разнообразной. Наши выпускники подтвердят это, ведь они могут:</p></div>
+                </div>
+                <div class="fw-grid fw-grid-20 fw-grid-50@m fw-mt-30 fw-mt-50@m">
+                    <div class="fw-width-1-1 fw-width-1-2@m"><p class="fw-check-mark"><strong>14 лет работы</strong>, чтобы сделать методику совершенной</p></div>
+                    <div class="fw-width-1-1 fw-width-1-2@m"><p class="fw-check-mark">Более <strong>2 тысяч учеников</strong> «с нуля» свободно говорят на языке</p></div>
+                    <div class="fw-width-1-1 fw-width-1-2@m"><p class="fw-check-mark">Более <strong>500</strong> человек <strong>получилим повышение</strong> благодаря нашим курса</p></div>
+                    <div class="fw-width-1-1 fw-width-1-2@m"><p class="fw-check-mark"><strong>98% учеников</strong> поддерживаютсвязь с преподавателями</p></div>
+                    <div class="fw-width-1-1 fw-width-1-2@m"><p class="fw-check-mark"><strong>1000%</strong> именно настолько наши выпускники стали увереннее в себе</p></div>
+                    <div class="fw-width-1-1 fw-width-1-2@m"><p class="fw-check-mark"><strong>95 из 100</strong> выпускников рекомендуют нас</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

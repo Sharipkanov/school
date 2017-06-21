@@ -1,0 +1,47 @@
+@each $value in 14, 15, 16, 18, 20, 24, 26, 32, 50, 52, 54, 60
+  .fw-fz-#{$value}
+    font-size: #{$value}px
+
+  .fw-fz-#{$value}\@xs
+    @media screen and (min-width: $extraSmall)
+      font-size: #{$value}px
+
+  .fw-fz-#{$value}\@s
+    @media screen and (min-width: $small)
+      font-size: #{$value}px
+
+  .fw-fz-#{$value}\@m
+    @media screen and (min-width: $medium)
+      font-size: #{$value}px
+
+  .fw-fz-#{$value}\@l
+    @media screen and (min-width: $large)
+      font-size: #{$value}px
+
+.fw-font-merriweather
+  font-family: 'Merriweather', sans-serif
+
+.fw-font-roboto
+  font-family: 'Roboto', sans-serif
+
+.fw-font-roboto-black
+  font-family: 'Roboto', sans-serif
+  font-weight: 900
+
+.fw-font-roboto-condensed
+  font-family: 'Roboto Condensed', sans-serif
+
+.fw-font-gotham-pro
+  font-family: 'Gotham Pro', sans-serif
+
+.fw-font-light
+  font-weight: 300
+
+.fw-font-medium
+  font-weight: 500
+
+.fw-font-bold
+  font-weight: bold
+
+.fw-font-italic
+  font-style: italic

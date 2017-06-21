@@ -2,14 +2,20 @@
 
   .s-services__container
     box-sizing: border-box
-    padding: 15px
+    padding: 15px 15px 0 15px
     display: flex
     align-items: flex-end
+    flex-wrap: wrap
 
   .s-services__left
     flex-basis: 45%
     margin-right: 15px
     flex-grow: 0
+
+    @media screen and (max-width: 767px)
+      flex-basis: 100%
+      margin-right: 0
+      margin-bottom: 15px
 
     .s-services__article
       &:first-child
@@ -22,6 +28,10 @@
   .s-services__right
     flex-basis: calc(100% - (45% + 15px))
     flex-grow: 1
+
+    @media screen and (max-width: 767px)
+      flex-basis: 100%
+      margin-right: 0
 
     .s-services__article
 
@@ -60,25 +70,13 @@
         padding: 45px 0 0 50px
         flex-direction: column
 
+        @media screen and (max-width: 479px)
+          padding: 20px 0 0 20px
+
         > div
           margin-top: auto
           display: flex
           justify-content: flex-end
-
-    .article__button
-      box-sizing: border-box
-      padding: 15px 20px
-      background-color: #ffd42d
-      transition: all .3s ease-in-out
-      text-decoration: none
-      color: #fff
-      font-size: 13px
-      text-transform: uppercase
-      font-family: 'Roboto', sans-serif
-      font-weight: bold
-
-      &:hover
-        background-color: #ffd42d * .9
 
     .article__title
       font-family: 'Roboto', sans-serif
@@ -93,3 +91,6 @@
       color: #fff
       max-width: 400px
       width: 100%
+
+      @media screen and (max-width: 479px)
+        width: calc(100% - 20px)

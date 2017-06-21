@@ -1,11 +1,21 @@
 .header
   background-color: #ffd42d
-  flex-basis: 295px
+  width: 295px
   flex-grow: 0
   flex-shrink: 0
   box-sizing: border-box
   padding: 60px 0 20px 30px
   min-height: 100vh
+
+  @media screen and (max-width: 959px)
+    width: calc(55px + 30px)
+    padding: 15px
+
+  @media screen and (max-width: 767px)
+    width: initial
+    padding: 10px
+    min-height: initial
+    box-shadow: 0 0 60px 20px rgba(#000, .1)
 
   .header__info
     padding: 7px 8px
@@ -15,3 +25,7 @@
     font-size: 12px
     display: inline-block
     margin: 0 10px 15px 10px
+
+    @media screen and (max-width: 959px)
+      display: none
+

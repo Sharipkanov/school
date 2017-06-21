@@ -10,28 +10,77 @@ strong
 .wrapper
   display: flex
   min-height: 100vh
-  min-width: 1000px
-  
+  min-width: 320px
+
+  @media screen and (max-width: 767px)
+    flex-direction: column
+
 .content
   flex-grow: 1
   flex-shrink: 1
   background-color: #ebebeb
+  display: flex
+  flex-direction: column
 
 .container
-  max-width: 1050px
   padding: 0 15px
   width: 100%
   box-sizing: border-box
+
+.button
+  display: inline-block
+  box-sizing: border-box
+  padding: 15px 20px
+  background-color: $colorBlue
+  transition: all .3s ease-in-out
+  color: $colorWhite
+  text-decoration: none
+  font-size: 13px
+  text-transform: uppercase
+  font-family: 'Roboto', sans-serif
+  font-weight: bold
+  cursor: pointer
+  border: none
+  line-height: 1.3
+
+  &.button-center
+    text-align: center
+
+  &:hover
+    background-color: $colorBlue * .9
+
+  &.button-yellow
+    background-color: $colorYellow
+    color: $colorBlack
+
+    &:hover
+      background-color: $colorYellow * .9
+
+  &.button-red
+    background-color: $colorRed
+    color: $colorWhite
+
+    &:hover
+      background-color: $colorRed * .9
 
 .b-logo
   display: flex
   align-items: center
   margin-bottom: 35px
 
+  @media screen and (max-width: 767px)
+    margin-bottom: 0
+
   .b-logo__image
     max-width: 55px
     flex-shrink: 0
     margin-right: 10px
+
+    @media screen and (max-width: 959px)
+      margin-left: auto
+
+    @media screen and (max-width: 767px)
+      max-width: 30px
 
   .b-logo__text
     flex-grow: 1
@@ -41,3 +90,16 @@ strong
     text-transform: capitalize
     font-size: 24px
     margin: 0
+
+    @media screen and (max-width: 959px)
+      display: none
+
+.s-vg-courses
+  .s-vg-courses__title
+    font-size: 24px
+    margin: 0
+    font-family: 'Roboto', sans-serif
+    font-weight: 500
+    text-align: center
+    margin-bottom: 30px
+

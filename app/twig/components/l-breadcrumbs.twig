@@ -1,0 +1,9 @@
+<ul class="l-breadcrumbs">
+    {% for item in items %}
+        {% if loop.index != items.length %}
+            <li class="l-breadcrumbs__item"><a href="#" class="l-breadcrumbs__link">{{ item }}</a></li>
+        {% else %}
+            <li class="l-breadcrumbs__item"><span class="l-breadcrumbs__text">{{ item }}</span></li>
+        {% endif %}
+    {% endfor %}
+</ul>

@@ -1,0 +1,59 @@
+@import "functions"
+@import "viewports"
+@import "backgrounds-and-colors"
+@import "width"
+@import "grid"
+@import "margins-and-paddings"
+@import "fonts"
+
+@each $value in '1-2', '1-5', '1-7', '2'
+  .fw-line-height-#{$value}
+    line-height: unquote(str_replace($value, '-', '.'))
+
+.fw-text-uppercase
+  text-transform: uppercase
+
+.fw-text-lowecase
+  text-transform: lowercase
+
+.fw-text-capitalize
+  text-transform: capitalize
+
+.fw-text-center
+  text-align: center
+
+.fw-text-left
+  text-align: left
+
+.fw-text-right
+  text-align: right
+
+.fw-inline-block
+  display: inline-block
+
+.fw-block
+  display: block
+
+.fw-inline
+  display: inline
+
+.fw-check-mark
+  position: relative
+  display: flex
+
+  &::before
+    content: url("../images/icons/icon.check.mark.png")
+    display: block
+    margin-top: 2px
+    margin-right: 5px
+    flex-shrink: 0
+
+.fw-flex
+  display: flex
+
+  .fw-flex-shrink-no
+    flex-shrink: 0
+
+  .fw-flex-grow
+    flex-grow: 1
+

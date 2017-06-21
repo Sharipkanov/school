@@ -1,0 +1,36 @@
+.s-school-facts
+  padding-top: 15px
+  position: relative
+  overflow: hidden
+
+  .s-school-facts__image
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    width: auto
+
+    @media screen and (max-width: 767px)
+      display: none
+  
+  .s-school-facts__box
+    position: relative
+    z-index: 1
+    background-color: #fff
+    width: 80%
+    box-sizing: border-box
+    padding: 70px 80px 70px 95px
+    margin-left: -15px
+
+    @media screen and (min-width: 1400px)
+      width: calc(100% - 325px)
+
+    @media screen and (max-width: 1140px)
+      width: 90%
+      padding: 40px
+
+    @media screen and (max-width: 767px)
+      width: 100%
+      padding: 15px
+      margin-left: 0
+
