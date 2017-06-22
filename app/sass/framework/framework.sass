@@ -4,7 +4,9 @@
 @import "width"
 @import "grid"
 @import "margins-and-paddings"
+@import "flex"
 @import "fonts"
+@import "border"
 
 @each $value in '1-2', '1-5', '1-7', '2'
   .fw-line-height-#{$value}
@@ -48,12 +50,18 @@
     margin-right: 5px
     flex-shrink: 0
 
-.fw-flex
-  display: flex
+@each $value in 100
+  .fw-box-proportional-#{$value}
+    position: relative
 
-  .fw-flex-shrink-no
-    flex-shrink: 0
+    &::after
+      display: block
+      content: ''
+      padding-top: unquote("#{$value}%")
 
-  .fw-flex-grow
-    flex-grow: 1
-
+    > *
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0

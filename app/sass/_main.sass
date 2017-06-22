@@ -11,6 +11,7 @@ strong
   display: flex
   min-height: 100vh
   min-width: 320px
+  overflow: hidden
 
   @media screen and (max-width: 767px)
     flex-direction: column
@@ -40,8 +41,10 @@ strong
   font-family: 'Roboto', sans-serif
   font-weight: bold
   cursor: pointer
-  border: none
   line-height: 1.3
+  border-color: $colorBlue
+  border-width: 1px
+  border-style: solid
 
   &.button-center
     text-align: center
@@ -52,6 +55,7 @@ strong
   &.button-yellow
     background-color: $colorYellow
     color: $colorBlack
+    border-color: $colorYellow
 
     &:hover
       background-color: $colorYellow * .9
@@ -59,9 +63,19 @@ strong
   &.button-red
     background-color: $colorRed
     color: $colorWhite
+    border-color: $colorRed
 
     &:hover
       background-color: $colorRed * .9
+
+  &.button-transparent
+    background-color: transparent
+    color: $colorWhite
+    border-color: $colorWhite
+
+    &:hover
+      background-color: $colorWhite
+      color: $colorBlack
 
 .b-logo
   display: flex

@@ -17,6 +17,16 @@
     padding: 20px
     flex-direction: column
     justify-content: center
+    box-sizing: border-box
+
+    &.p-service__cover--bg
+      background-color: rgba($colorBlack, .7)
+
+    &.p-service__cover--half
+      top: 0
+      left: initial
+      right: 0
+      width: 50%
 
   .p-service__title
     font-family: 'Roboto', sans-serif
@@ -31,6 +41,7 @@
     color: #fff
     max-width: 400px
     width: 100%
+    margin-top: 10px
 
     @media screen and (max-width: 479px)
       width: calc(100% - 20px)

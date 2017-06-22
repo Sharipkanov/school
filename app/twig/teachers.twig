@@ -1,0 +1,113 @@
+{% extends 'layouts/app.twig' %}
+
+{% block pageTitle %}Блог{% endblock %}
+
+{% block content %}
+    <div class="fw-pt-40 fw-pt-80@l fw-pb-40 fw-pb-80@l fw-bg-cover fw-bg-center fw-bg-no-repeat" style="background-image: url('images/pages/teachers/bg.jpg')">
+        <div class="container">
+            <div class="fw-pl-25@m fw-pl-80@l">
+                <div class="fw-mb-50">
+                    {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'О школе', 'Наши преподаватели']} %}
+                </div>
+                <div class="fw-max-width-700">
+                    <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-54@m fw-line-height-1-2">Наши преподаватели</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fw-mt-15">
+        <div class="container">
+            <div class="fw-bg-color-white fw-pt-40 fw-pt-80@l fw-pb-40 fw-pb-80@l fw-text-center fw-pr-15 fw-pl-15">
+                <div class="fw-max-width-760 fw-inline-block">
+                    <p class="fw-font-roboto fw-font-medium fw-text-uppercase fw-fz-24 fw-color-black fw-mb-40">Делаем ОБРАЗОВАНИЕ ЛЁГКИМ И ДОСТУПНЫМ</p>
+                    <p class="fw-font-merriweather fw-font-light fw-font-italic fw-fz-15 fw-color-black fw-line-height-1-7">Успешное образование в современном мире – это образование без границ. За 14 лет существования школы мы сумели объединить в нашей методике инновационные технологии обучения, принцип доступности и открытости и огромное желание вывести изучение иностранного языка за стены серых классов и скучных учебников. Нам не приходится заставлять или упрашивать учеников сделать очередное задание: мы даем им мотивацию, интерес и веру в себя, с которыми они с искренним интересом покоряют учебные вершины.</p>
+                </div>
+            </div>
+            <div class="fw-grid fw-grid-15">
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <article class="p-service">
+                        <img src="images/pages/teachers/thumbnail.image.jpg" alt="" class="p-service__thumbnail">
+                        <div class="p-service__cover p-service__cover--half p-service__cover--bg">
+                            <div class="fw-flex fw-flex-column fw-flex-middle fw-flex-center">
+                                <div class="fw-mb-20">
+                                    <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20">Геннадий</p>
+                                    <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Разговорный английский, TOEFL</p>
+                                </div>
+                                <a href="#" class="button button-yellow">Записаться на бесплатный вебинар</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <article class="p-service">
+                        <img src="images/pages/teachers/thumbnail.image.2.jpg" alt="" class="p-service__thumbnail">
+                        <div class="p-service__cover p-service__cover--bg">
+                            <div class="fw-flex fw-flex-bottom">
+                                <div class="fw-flex-grow-1">
+                                    <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Стаж преподавания: 5 лет</p>
+                                    <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Образование: Диплом
+                                    о высшем лингвистическом
+                                    образовании АФО
+                                    Разговорный английский, TOEFL</p>
+                                </div>
+                                <div class="fw-flex-shrink-no">
+                                    <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20">Геннадий</p>
+                                    <a href="#" class="button button-yellow">Записаться на бесплатный вебинар</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <article class="p-service">
+                        <img src="images/pages/teachers/thumbnail.image.jpg" alt="" class="p-service__thumbnail">
+                        <div class="p-service__cover p-service__cover--half p-service__cover--bg">
+                            <div class="fw-flex fw-flex-column fw-flex-middle fw-flex-center">
+                                <div class="fw-mb-20">
+                                    <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20">Геннадий</p>
+                                    <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Разговорный английский, TOEFL</p>
+                                </div>
+                                <a href="#" class="button button-yellow">Записаться на бесплатный вебинар</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="fw-width-1-1 fw-width-1-2@m">
+                    <article class="p-service">
+                        <img src="images/pages/teachers/thumbnail.image.2.jpg" alt="" class="p-service__thumbnail">
+                        <div class="p-service__cover p-service__cover--bg">
+                            <div class="fw-flex fw-flex-bottom">
+                                <div class="fw-flex-grow-1">
+                                    <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Стаж преподавания: 5 лет</p>
+                                    <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Образование: Диплом
+                                        о высшем лингвистическом
+                                        образовании АФО
+                                        Разговорный английский, TOEFL</p>
+                                </div>
+                                <div class="fw-flex-shrink-no">
+                                    <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20">Геннадий</p>
+                                    <a href="#" class="button button-yellow">Записаться на бесплатный вебинар</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="s-school-facts">
+        <img src="images/s-school-facts-bg.jpg" alt="" class="s-school-facts__image">
+        <div class="container">
+            <div class="s-school-facts__box">
+                <ul class="l-checkmark">
+                    <li><p>Все наши преподаватели имеют дипломы и сертификаты, подтверждающие их высокий уровень, – мы отбираем лучших</p></li>
+                    <li><p>Они жили или живут за рубежом и практикуют навык разговорного языка с носителями</p></li>
+                    <li><p>Они в совершенстве владеют методикой быстрого и эффективного обучения</p></li>
+                    <li><p>Наши преподаватели настроены на позитивное общение и всегда готовы помочь ученикам</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

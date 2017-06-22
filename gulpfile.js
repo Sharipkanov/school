@@ -7,11 +7,13 @@ const gulp = require('gulp'),
     babel = require('gulp-babel'),
     sass = require("gulp-sass"),
     prefix = require("gulp-autoprefixer"),
+    gcmq = require('gulp-group-css-media-queries'),
     minifyCss = require('gulp-minify-css'),
     uglify = require('gulp-uglify'),
     sourcemaps = require("gulp-sourcemaps"),
     callback = require('gulp-callback'),
     clean = require('gulp-clean'),
+    spritesmith = require("gulp.spritesmith"),
     browserSync = require('browser-sync');
 
 /* PRODUCTION PLUGINS ----------------------------------------------------------
@@ -28,6 +30,7 @@ const sources = {
         dist: 'app/'
     },
     css: {
+        src: 'app/css/*.css',
         dist: 'app/css'
     },
     js: {
@@ -121,9 +124,33 @@ gulp.task('sass', function () {
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(sources.css.dist))
+});
+
+/* Combine media queries ----------------------------------------------------- */
+gulp.task('gcmq', ['sass'], function () {
+    gulp.src(sources.css.src)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(gcmq())
+        .pipe(gulp.dest(sources.css.dist))
         .pipe(browserSync.reload({stream: true}));
 });
 
+/* Sprites ------------------------------------------------------------------- */
+gulp.task('sprite', function () {
+    const spriteData = gulp.src(sources.images.icons.default)
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            imgPath: '../images/sprite.png',
+            cssName: '_sprite.sass'
+        }));
+
+    spriteData.css.pipe(gulp.dest(sources.sass.dist));
+    spriteData.img.pipe(gulp.dest(sources.images.dist));
+});
+
+/* ES6 to ES5 ---------------------------------------------------------------- */
 gulp.task('es6', function () {
     return gulp.src(sources.js.es6_watch)
         .pipe(plumber())
@@ -210,11 +237,11 @@ gulp.task('images', function () {
  ---------------------------------------------------------------------------- */
 gulp.task('watch', function () {
     // gulp.watch('bower.json', ["bower"]);
-    gulp.watch(sources.sass.watch, ['sass']);
+    gulp.watch(sources.sass.watch, ['gcmq']);
     // gulp.watch(sources.pug.watch, ["pug"]);
     gulp.watch(sources.twig.watch, ["twig"]);
     gulp.watch(sources.js.es6_watch, ['es6']);
     gulp.watch(sources.js.watch).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['browser-sync', 'es6', 'twig', 'sass', 'watch']);
+gulp.task('default', ['browser-sync', 'es6', 'twig', 'gcmq', 'watch']);

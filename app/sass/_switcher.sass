@@ -1,0 +1,87 @@
+[data-switcher]
+  list-style: none
+
+[data-switcher-target]
+  list-style: none
+  position: relative
+
+  > .active
+    display: block
+
+  > *
+    position: absolute
+    z-index: 1
+    left: 0
+    top: 0
+    width: 100%
+    display: none
+
+.info-switcher
+  display: flex
+  flex-wrap: wrap
+
+  @media screen and (min-width: $large)
+    flex-wrap: nowrap
+
+  [data-switcher]
+    width: 100%
+
+    > li
+      > a
+        display: flex
+        align-items: center
+        text-decoration: none
+        border: 1px solid #f4f4f4
+        padding: 0 25px
+        font-weight: 300
+        font-size: 18px
+        color: $colorBlack
+        justify-content: space-between
+
+        &::after
+          display: block
+          content: ''
+          +sprite($icon-arrow)
+
+      &.active
+        > a
+          font-weight: bold
+          border-color: #f4f4f4
+          background-color: #f4f4f4
+
+          &::after
+            +sprite($icon-arrow-bold)
+
+      + li > a
+        border-top: none
+
+    @media screen and (min-width: $extraSmall)
+      max-width: 100%
+
+      > li
+        > a
+          min-height: 40px
+
+    @media screen and (min-width: $large)
+      max-width: 270px
+
+      > li
+        > a
+          min-height: 90px
+          
+  [data-switcher-target]
+    flex-grow: 1
+
+    @media screen and (min-width: $extraSmall)
+      width: 100%
+
+    @media screen and (min-width: $large)
+      width: initial
+
+    .active
+      position: relative
+      min-height: 100%
+      background-color: #f4f4f4
+
+
+

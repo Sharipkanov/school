@@ -22,6 +22,9 @@
     @media screen and (min-width: $large)
       width: unquote("#{$width}%")
 
-@each $value in 355, 470, 700, 710, 760, 840
+@each $value in 46  , 355, 420, 470, 550, 700, 710, 760, 840
+  .fw-width-#{$value}
+    width: #{$value}px
+
   .fw-max-width-#{$value}
     max-width: #{$value}px

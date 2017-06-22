@@ -1,0 +1,288 @@
+.fw-flex
+  display: flex
+
+  &.fw-flex-column
+    flex-direction: column
+
+  &.fw-flex-column\@xs
+    @media screen and (min-width: $extraSmall)
+      flex-direction: column
+
+  &.fw-flex-column\@s
+    @media screen and (min-width: $small)
+      flex-direction: column
+
+  &.fw-flex-column\@m
+    @media screen and (min-width: $medium)
+      flex-direction: column
+
+  &.fw-flex-column\@l
+    @media screen and (min-width: $large)
+      flex-direction: column
+
+  &.fw-flex-row
+    flex-direction: row
+
+  &.fw-flex-row\@xs
+    @media screen and (min-width: $extraSmall)
+      flex-direction: row
+
+  &.fw-flex-row\@s
+    @media screen and (min-width: $small)
+      flex-direction: row
+
+  &.fw-flex-row\@m
+    @media screen and (min-width: $medium)
+      flex-direction: row
+
+  &.fw-flex-row\@l
+    @media screen and (min-width: $large)
+      flex-direction: row
+
+  &.fw-flex-wrap
+    flex-wrap: wrap
+
+  &.fw-flex-wrap\@xs
+    @media screen and (min-width: $extraSmall)
+      flex-wrap: wrap
+
+  &.fw-flex-wrap\@s
+    @media screen and (min-width: $small)
+      flex-wrap: wrap
+
+  &.fw-flex-wrap\@m
+    @media screen and (min-width: $medium)
+      flex-wrap: wrap
+
+  &.fw-flex-wrap\@l
+    @media screen and (min-width: $large)
+      flex-wrap: wrap
+
+  &.fw-flex-middle
+    align-items: center
+
+  &.fw-flex-middle\@xs
+    @media screen and (min-width: $extraSmall)
+      align-items: center
+
+  &.fw-flex-middle\@s
+    @media screen and (min-width: $small)
+      align-items: center
+
+  &.fw-flex-middle\@m
+    @media screen and (min-width: $medium)
+      align-items: center
+
+  &.fw-flex-middle\@l
+    @media screen and (min-width: $large)
+      align-items: center
+
+  &.fw-flex-top
+    align-items: flex-start
+
+  &.fw-flex-top\@xs
+    @media screen and (min-width: $extraSmall)
+      align-items: flex-start
+
+  &.fw-flex-top\@s
+    @media screen and (min-width: $small)
+      align-items: flex-start
+
+  &.fw-flex-top\@m
+    @media screen and (min-width: $medium)
+      align-items: flex-start
+
+  &.fw-flex-top\@l
+    @media screen and (min-width: $large)
+      align-items: flex-start
+
+  &.fw-flex-bottom
+    align-items: flex-end
+
+  &.fw-flex-bottom\@xs
+    @media screen and (min-width: $extraSmall)
+      align-items: flex-end
+
+  &.fw-flex-bottom\@s
+    @media screen and (min-width: $small)
+      align-items: flex-end
+
+  &.fw-flex-bottom\@m
+    @media screen and (min-width: $medium)
+      align-items: flex-end
+
+  &.fw-flex-bottom\@l
+    @media screen and (min-width: $large)
+      align-items: flex-end
+
+  &.fw-flex-center
+    justify-content: center
+
+  &.fw-flex-center\@xs
+    @media screen and (min-width: $extraSmall)
+      justify-content: center
+
+  &.fw-flex-center\@s
+    @media screen and (min-width: $small)
+      justify-content: center
+
+  &.fw-flex-center\@m
+    @media screen and (min-width: $medium)
+      justify-content: center
+
+  &.fw-flex-center\@l
+    @media screen and (min-width: $large)
+      justify-content: center
+
+  &.fw-flex-left
+    justify-content: flex-start
+
+  &.fw-flex-left\@xs
+    @media screen and (min-width: $extraSmall)
+      justify-content: flex-start
+
+  &.fw-flex-left\@s
+    @media screen and (min-width: $small)
+      justify-content: flex-start
+
+  &.fw-flex-left\@m
+    @media screen and (min-width: $medium)
+      justify-content: flex-start
+
+  &.fw-flex-left\@l
+    @media screen and (min-width: $large)
+      justify-content: flex-start
+
+  &.fw-flex-right
+    justify-content: flex-end
+
+  &.fw-flex-right\@xs
+    @media screen and (min-width: $extraSmall)
+      justify-content: flex-end
+
+  &.fw-flex-right\@s
+    @media screen and (min-width: $small)
+      justify-content: flex-end
+
+  &.fw-flex-right\@m
+    @media screen and (min-width: $medium)
+      justify-content: flex-end
+
+  &.fw-flex-right\@l
+    @media screen and (min-width: $large)
+      justify-content: flex-end
+
+  &.fw-flex-space-between
+    justify-content: space-between
+
+  &.fw-flex-space-between\@xs
+    @media screen and (min-width: $extraSmall)
+      justify-content: space-between
+
+  &.fw-flex-space-between\@s
+    @media screen and (min-width: $small)
+      justify-content: space-between
+
+  &.fw-flex-space-between\@m
+    @media screen and (min-width: $medium)
+      justify-content: space-between
+
+  &.fw-flex-space-between\@l
+    @media screen and (min-width: $large)
+      justify-content: space-between
+
+  &.fw-flex-space-around
+    justify-content: space-around
+
+  &.fw-flex-space-around\@xs
+    @media screen and (min-width: $extraSmall)
+      justify-content: space-around
+
+  &.fw-flex-space-around\@s
+    @media screen and (min-width: $small)
+      justify-content: space-around
+
+  &.fw-flex-space-around\@m
+    @media screen and (min-width: $medium)
+      justify-content: space-around
+
+  &.fw-flex-space-around\@l
+    @media screen and (min-width: $large)
+      justify-content: space-around
+
+  @each $value in 1, 2, 3, 4, 5
+    .fw-flex-shrink-#{$value}
+      flex-shrink: $value
+
+    .fw-flex-shrink-#{$value}\@xs
+      @media screen and (min-width: $extraSmall)
+        flex-shrink: $value
+
+    .fw-flex-shrink-#{$value}\@s
+      @media screen and (min-width: $small)
+        flex-shrink: $value
+
+    .fw-flex-shrink-#{$value}\@m
+      @media screen and (min-width: $medium)
+        flex-shrink: $value
+
+    .fw-flex-shrink-#{$value}\@l
+      @media screen and (min-width: $large)
+        flex-shrink: $value
+
+    .fw-flex-grow-#{$value}
+      flex-grow: $value
+
+    .fw-flex-grow-#{$value}\@xs
+      @media screen and (min-width: $extraSmall)
+        flex-grow: $value
+
+    .fw-flex-grow-#{$value}\@s
+      @media screen and (min-width: $small)
+        flex-grow: $value
+
+    .fw-flex-grow-#{$value}\@m
+      @media screen and (min-width: $medium)
+        flex-grow: $value
+
+    .fw-flex-grow-#{$value}\@l
+      @media screen and (min-width: $large)
+        flex-grow:  $value
+
+  .fw-flex-shrink-no
+    flex-shrink: 0
+
+  .fw-flex-shrink-no\@xs
+    @media screen and (min-width: $extraSmall)
+      flex-shrink: 0
+
+  .fw-flex-shrink-no\@s
+    @media screen and (min-width: $small)
+      flex-shrink: 0
+
+  .fw-flex-shrink-no\@m
+    @media screen and (min-width: $medium)
+      flex-shrink: 0
+
+  .fw-flex-shrink-no\@l
+    @media screen and (min-width: $large)
+      flex-shrink: 0
+
+  .fw-flex-grow-no
+    flex-grow: 0
+
+  .fw-flex-grow-no\@xs
+    @media screen and (min-width: $extraSmall)
+      flex-grow: 0
+
+  .fw-flex-grow-no\@s
+    @media screen and (min-width: $small)
+      flex-grow: 0
+
+  .fw-flex-grow-no\@m
+    @media screen and (min-width: $medium)
+      flex-grow: 0
+
+  .fw-flex-grow-no\@l
+    @media screen and (min-width: $large)
+      flex-grow: 0

@@ -84,15 +84,16 @@
         if (switchers && switchers.length > 0) {
             for (var i = 0; i < switchers.length; i++) {
                 var switcher = switchers[i],
-                    switcherOptions = _self.options(switcher.dataset.switcher),
+                    switcherOptions = _self.options(switcher.dataset["switcher"]),
                     switcherElems = switcher.children,
-                    switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children;
+                    switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children,
+                    switchersActive = [];
 
                 for (var y = 0; y < switcherElems.length; y++) {
                     var switcherElem = switcherElems[y],
                         parentNode = switcher.children,
-                        switcherTarget = switcherTargets[y],
-                        switcherNotActiveList = [];
+                        switcherTrigger = switcherElem.children.length ? switcherElem.children[0] : switcherElem,
+                        switcherTarget = switcherTargets[y];
 
                     if (switcherElem.classList.contains('active')) {
                         for (var z = 0; z < parentNode.length; z++) {
@@ -101,15 +102,16 @@
                         }
                         switcherElem.classList.add('active');
                         switcherTarget.classList.add('active');
-                    } else switcherNotActiveList.push(y);
+                    } else switchersActive.push(0);
 
-                    switcherElem.children[0].addEventListener('click', function (elem, target, parent, targets) {
+                    switcherTrigger.addEventListener('click', function (elem, target, parent, targets) {
                         return function (e) {
                             e.preventDefault();
+
                             if (!elem.classList.contains('active')) {
-                                for (var z = 0; z < parentNode.length; z++) {
-                                    parent[z].classList.remove('active');
-                                    targets[z].classList.remove('active');
+                                for (var _z = 0; _z < elem.parentNode.children.length; _z++) {
+                                    elem.parentNode.children[_z].classList.remove('active');
+                                    targets[_z].classList.remove('active');
                                 }
                                 elem.classList.add('active');
                                 target.classList.add('active');
@@ -118,7 +120,7 @@
                     }(switcherElem, switcherTarget, parentNode, switcherTargets));
                 }
 
-                if (switcherNotActiveList.length === switcherElems.length) {
+                if (switchersActive.length === switcherElems.length) {
                     switcherElems[0].classList.add('active');
                     switcherTargets[0].classList.add('active');
                 }
@@ -135,7 +137,7 @@
                     return '"' + $1 + '"';
                 }));
             } else {
-                return new Function("", "var json = " + str + "; return JSON.parse(JSON.stringify(json));")();
+                return new Function("", "const json = " + str + "; return JSON.parse(JSON.stringify(json));")();
             }
         } catch (e) {
             return false;
@@ -145,16 +147,16 @@
     YOURAPPNAME.prototype.options = function (string) {
         var _self = this;
 
-        if (typeof string != 'string') return string;
+        if (typeof string !== 'string') return string;
 
-        if (string.indexOf(':') != -1 && string.trim().substr(-1) != '}') {
+        if (string.indexOf(':') !== -1 && string.trim().substr(-1) !== '}') {
             string = '{' + string + '}';
         }
 
         var start = string ? string.indexOf("{") : -1,
             options = {};
 
-        if (start != -1) {
+        if (start !== -1) {
             try {
                 options = _self.str2json(string.substr(start));
             } catch (e) {}
@@ -164,8 +166,6 @@
     };
 
     YOURAPPNAME.prototype.popups = function (options) {
-        var _self = this;
-
         var defaults = {
             reachElementClass: '.js-popup',
             closePopupClass: '.js-close-popup',
@@ -189,7 +189,6 @@
         plugin.openPopup = function (popupName) {
             plugin.reachPopups.filter('[data-popup="' + popupName + '"]').addClass('opened');
             plugin.bodyEl.css('overflow-y', 'scroll');
-            plugin.topPanelEl.css('padding-right', scrollSettings.width);
             plugin.htmlEl.addClass('popup-opened');
         };
 
@@ -218,8 +217,8 @@
                 plugin.openPopup(pop);
             });
 
-            plugin.closePopupEl.on('click', function (e) {
-                var pop;
+            plugin.closePopupEl.on('click', function () {
+                var pop = void 0;
                 if (this.hasAttribute('data-close-popup')) {
                     pop = $(this).attr('data-close-popup');
                 } else {
@@ -229,7 +228,7 @@
                 plugin.closePopup(pop);
             });
 
-            plugin.changePopupEl.on('click', function (e) {
+            plugin.changePopupEl.on('click', function () {
                 var closingPop = $(this).attr('data-closing-popup');
                 var openingPop = $(this).attr('data-opening-popup');
 
@@ -265,9 +264,25 @@
         app.initSwitcher(); // data-switcher="{target: 'anything'}" , data-switcher-target="anything"
     });
 
-    app.appLoad('full', function (e) {
+    app.appLoad('full', function () {
         console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+
+        var $whyUsCarousel = $('#why-us-carousel');
+
+        $whyUsCarousel.owlCarousel({
+            loop: false,
+            nav: true,
+            items: 1
+        });
+
+        $whyUsCarousel.on('refreshed.owl.carousel', function (e) {
+            console.log(this);
+        });
+
+        $(window).resize(function () {
+            $whyUsCarousel.trigger('refresh.owl.carousel');
+        });
     });
 })();

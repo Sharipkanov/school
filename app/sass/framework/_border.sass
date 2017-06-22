@@ -1,0 +1,41 @@
+@each $value in 1, 2, 3, 4
+  .fw-border-#{$value}
+    border-width: #{$value}px
+
+  .fw-border-top-#{$value}
+    border-top-width: #{$value}px
+
+  .fw-border-bottom-#{$value}
+    border-bottom-width: #{$value}px
+
+  .fw-border-left-#{$value}
+    border-left-width: #{$value}px
+
+  .fw-border-right-#{$value}
+    border-right-width: #{$value}px
+
+@each $value in 5
+  .fw-border-radius-#{$value}
+    border-radius: #{$value}px
+
+@each $value in white_#{$colorWhite}, yellow_#{$colorYellow}, black_#{$colorBlack}, blue_#{$colorBlue}, grey-light_#{$colorGreyLight}
+  $values: str_split($value, '_')
+  $color: nth($values, 2)
+  $colorName: nth($values, 1)
+
+  .fw-border-color-#{$colorName}
+    border-color: $color
+
+.fw-border-style-solid
+  border-style: solid
+
+.fw-border-style-dashed
+  border-style: dashed
+
+.fw-border-style-dotted
+  border-style: dotted
+
+.fw-border-box
+  box-sizing: border-box
+
+

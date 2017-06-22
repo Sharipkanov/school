@@ -1,7 +1,7 @@
 (function() {
 
     function YOURAPPNAME(doc) {
-        var _self = this;
+        const _self = this;
 
         _self.doc = doc;
         _self.window = window;
@@ -16,7 +16,7 @@
     }
 
     YOURAPPNAME.prototype.bootstrap = function() {
-        var _self = this;
+        const _self = this;
 
         // Initialize window scollBar width
         _self.scrollWidth = _self.scrollBarWidth();
@@ -24,7 +24,7 @@
 
     // Window load types (loading, dom, full)
     YOURAPPNAME.prototype.appLoad  = function (type, callback) {
-        var _self = this;
+        const _self = this;
 
         switch(type) {
             case 'loading':
@@ -50,7 +50,7 @@
 
     // Detect scroll default scrollBar width (return a number)
     YOURAPPNAME.prototype.scrollBarWidth = function() {
-        var _self = this,
+        const _self = this,
             outer = _self.doc.createElement("div");
         outer.style.visibility = "hidden";
         outer.style.width = "100px";
@@ -58,16 +58,16 @@
 
         _self.body.appendChild(outer);
 
-        var widthNoScroll = outer.offsetWidth;
+        const widthNoScroll = outer.offsetWidth;
 
         outer.style.overflow = "scroll";
 
-        var inner = _self.doc.createElement("div");
+        const inner = _self.doc.createElement("div");
 
         inner.style.width = "100%";
         outer.appendChild(inner);
 
-        var widthWithScroll = inner.offsetWidth;
+        const widthWithScroll = inner.offsetWidth;
 
         outer.parentNode.removeChild(outer);
 
@@ -75,38 +75,41 @@
     };
 
     YOURAPPNAME.prototype.initSwitcher = function () {
-        var _self = this;
+        const _self = this;
 
-        var switchers = _self.doc.querySelectorAll('[data-switcher]');
+        const switchers = _self.doc.querySelectorAll('[data-switcher]');
 
-        if(switchers && switchers.length > 0) {
-            for(var i=0; i<switchers.length; i++) {
-                var switcher = switchers[i],
-                    switcherOptions = _self.options(switcher.dataset.switcher),
+        if (switchers && switchers.length > 0) {
+            for (let i = 0; i < switchers.length; i++) {
+                const switcher = switchers[i],
+                    switcherOptions = _self.options(switcher.dataset["switcher"]),
                     switcherElems = switcher.children,
-                    switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children;
+                    switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children,
+                    switchersActive = [];
 
-                for(var y=0; y<switcherElems.length; y++) {
-                    var switcherElem = switcherElems[y],
+                for (let y = 0; y < switcherElems.length; y++) {
+                    const switcherElem = switcherElems[y],
                         parentNode = switcher.children,
-                        switcherTarget = switcherTargets[y],
-                        switcherNotActiveList = [];
+                        switcherTrigger = (switcherElem.children.length) ? switcherElem.children[0] : switcherElem,
+                        switcherTarget = switcherTargets[y];
 
-                    if(switcherElem.classList.contains('active')) {
-                        for(var z=0; z<parentNode.length; z++) {
+
+                    if (switcherElem.classList.contains('active')) {
+                        for (let z = 0; z < parentNode.length; z++) {
                             parentNode[z].classList.remove('active');
                             switcherTargets[z].classList.remove('active');
                         }
                         switcherElem.classList.add('active');
                         switcherTarget.classList.add('active');
-                    } else switcherNotActiveList.push(y);
+                    } else switchersActive.push(0);
 
-                    switcherElem.children[0].addEventListener('click', function (elem, target, parent, targets) {
+                    switcherTrigger.addEventListener('click', function (elem, target, parent, targets) {
                         return function (e) {
                             e.preventDefault();
-                            if(!elem.classList.contains('active')) {
-                                for(var z=0; z<parentNode.length; z++) {
-                                    parent[z].classList.remove('active');
+
+                            if (!elem.classList.contains('active')) {
+                                for (let z = 0; z < elem.parentNode.children.length; z++) {
+                                    elem.parentNode.children[z].classList.remove('active');
                                     targets[z].classList.remove('active');
                                 }
                                 elem.classList.add('active');
@@ -117,7 +120,7 @@
                     }(switcherElem, switcherTarget, parentNode, switcherTargets));
                 }
 
-                if(switcherNotActiveList.length === switcherElems.length) {
+                if (switchersActive.length === switcherElems.length) {
                     switcherElems[0].classList.add('active');
                     switcherTargets[0].classList.add('active');
                 }
@@ -133,23 +136,23 @@
                     .replace(/'([^']+)'/g, function(_, $1){return '"'+$1+'"';})
                 );
             } else {
-                return (new Function("", "var json = " + str + "; return JSON.parse(JSON.stringify(json));"))();
+                return (new Function("", "const json = " + str + "; return JSON.parse(JSON.stringify(json));"))();
             }
         } catch(e) { return false; }
     };
 
     YOURAPPNAME.prototype.options = function(string) {
-        var _self = this;
+        const _self = this;
 
-        if (typeof string !='string') return string;
+        if (typeof string !== 'string') return string;
 
-        if (string.indexOf(':') != -1 && string.trim().substr(-1) != '}') {
+        if (string.indexOf(':') !== -1 && string.trim().substr(-1) !== '}') {
             string = '{'+string+'}';
         }
 
-        var start = (string ? string.indexOf("{") : -1), options = {};
+        let start = (string ? string.indexOf("{") : -1), options = {};
 
-        if (start != -1) {
+        if (start !== -1) {
             try {
                 options = _self.str2json(string.substr(start));
             } catch (e) {}
@@ -159,9 +162,7 @@
     };
 
     YOURAPPNAME.prototype.popups = function (options) {
-        var _self = this;
-
-        var defaults = {
+        const defaults = {
             reachElementClass: '.js-popup',
             closePopupClass: '.js-close-popup',
             currentElementClass: '.js-open-popup',
@@ -170,7 +171,7 @@
 
         options = $.extend({}, options, defaults);
 
-        var plugin = {
+        const plugin = {
             reachPopups: $(options.reachElementClass),
             bodyEl: $('body'),
             topPanelEl: $('.top-panel-wrapper'),
@@ -184,7 +185,6 @@
         plugin.openPopup = function (popupName) {
             plugin.reachPopups.filter('[data-popup="' + popupName + '"]').addClass('opened');
             plugin.bodyEl.css('overflow-y', 'scroll');
-            plugin.topPanelEl.css('padding-right', scrollSettings.width);
             plugin.htmlEl.addClass('popup-opened');
         };
 
@@ -209,12 +209,12 @@
         plugin.bindings = function () {
             plugin.openPopupEl.on('click', function (e) {
                 e.preventDefault();
-                var pop = $(this).attr('data-open-popup');
+                const pop = $(this).attr('data-open-popup');
                 plugin.openPopup(pop);
             });
 
-            plugin.closePopupEl.on('click', function (e) {
-                var pop;
+            plugin.closePopupEl.on('click', function () {
+                let pop;
                 if (this.hasAttribute('data-close-popup')) {
                     pop = $(this).attr('data-close-popup');
                 } else {
@@ -224,16 +224,16 @@
                 plugin.closePopup(pop);
             });
 
-            plugin.changePopupEl.on('click', function (e) {
-                var closingPop = $(this).attr('data-closing-popup');
-                var openingPop = $(this).attr('data-opening-popup');
+            plugin.changePopupEl.on('click', function () {
+                const closingPop = $(this).attr('data-closing-popup');
+                const openingPop = $(this).attr('data-opening-popup');
 
                 plugin.changePopup(closingPop, openingPop);
             });
 
             plugin.reachPopups.on('click', function (e) {
-                var target = $(e.target);
-                var className = options.reachElementClass.replace('.', '');
+                const target = $(e.target);
+                const className = options.reachElementClass.replace('.', '');
                 if (target.hasClass(className)) {
                     plugin.closePopup($(e.target).attr('data-popup'));
                 }
@@ -246,7 +246,7 @@
         return plugin;
     };
 
-    var app = new YOURAPPNAME(document);
+    const app = new YOURAPPNAME(document);
 
     app.appLoad('loading', function () {
         console.log('App is loading... Paste your app code here.');
@@ -261,10 +261,26 @@
         app.initSwitcher(); // data-switcher="{target: 'anything'}" , data-switcher-target="anything"
     });
 
-    app.appLoad('full', function (e) {
+    app.appLoad('full', function () {
         console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+
+        const $whyUsCarousel = $('#why-us-carousel');
+
+        $whyUsCarousel.owlCarousel({
+            loop: false,
+            nav: true,
+            items: 1
+        });
+
+        $whyUsCarousel.on('refreshed.owl.carousel', function(e) {
+            console.log(this)
+        });
+
+        $(window).resize(function() {
+            $whyUsCarousel.trigger('refresh.owl.carousel');
+        });
     });
 
 })();
