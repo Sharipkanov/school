@@ -1,6 +1,9 @@
 .fw-flex
   display: flex
 
+  > *
+    min-width: 0
+
   &.fw-flex-column
     flex-direction: column
 
@@ -57,6 +60,25 @@
   &.fw-flex-wrap\@l
     @media screen and (min-width: $large)
       flex-wrap: wrap
+
+  &.fw-flex-wrap-no
+    flex-wrap: nowrap
+
+  &.fw-flex-wrap-no\@xs
+    @media screen and (min-width: $extraSmall)
+      flex-wrap: nowrap
+
+  &.fw-flex-wrap-no\@s
+    @media screen and (min-width: $small)
+      flex-wrap: nowrap
+
+  &.fw-flex-wrap-no\@m
+    @media screen and (min-width: $medium)
+      flex-wrap: nowrap
+
+  &.fw-flex-wrap-no\@l
+    @media screen and (min-width: $large)
+      flex-wrap: nowrap
 
   &.fw-flex-middle
     align-items: center

@@ -2,46 +2,18 @@
 @import "viewports"
 @import "backgrounds-and-colors"
 @import "width"
+@import "height"
 @import "grid"
 @import "margins-and-paddings"
 @import "flex"
 @import "fonts"
 @import "border"
 @import "visibilities"
+@import "text"
 
 @each $value in '1-2', '1-5', '1-7', '2'
   .fw-line-height-#{$value}
     line-height: unquote(str_replace($value, '-', '.'))
-
-.fw-clearfix
-  &::after
-    display: block
-    content: ''
-    clear: both
-
-.fw-float-left
-  float: left
-
-.fw-float-right
-  float: right
-
-.fw-text-uppercase
-  text-transform: uppercase
-
-.fw-text-lowecase
-  text-transform: lowercase
-
-.fw-text-capitalize
-  text-transform: capitalize
-
-.fw-text-center
-  text-align: center
-
-.fw-text-left
-  text-align: left
-
-.fw-text-right
-  text-align: right
 
 .fw-inline-block
   display: inline-block
