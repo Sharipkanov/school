@@ -1,0 +1,56 @@
+.owl-carousel
+  position: relative
+  box-sizing: border-box
+  padding: 0 60px
+
+  .item
+    box-sizing: border-box
+
+  .owl-nav
+    .owl-prev,
+    .owl-next
+      width: 20px
+      height: 20px
+      border-top: 1px solid $colorGrey
+      border-right: 1px solid $colorGrey
+      font-size: 0
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+
+      @media screen and (max-width: 767px)
+        width: 10px
+        height: 10px
+
+    .owl-prev
+      left: 25px
+      transform: rotate(-135deg)
+
+    .owl-next
+      right: 25px
+      transform: rotate(45deg)
+
+    @media screen and (max-width: 479px)
+      display: none
+
+  .owl-dots
+    display: block
+    width: 100%
+    text-align: center
+    margin-top: 40px
+
+    .owl-dot
+      display: inline-block
+      width: 10px
+      height: 10px
+      border-radius: 50%
+      background-color: $colorGrey
+
+      &:not(:first-child)
+        margin-left: 5px
+
+      &.active
+        background-color: $colorYellow
+
+  @media screen and (max-width: 479px)
+    padding: 0 20px

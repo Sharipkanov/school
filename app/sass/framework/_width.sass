@@ -1,4 +1,4 @@
-@each $value in '1-1_100', '1-2_50', '1-3_33\.333', '1-4_25', '1-5_20', '1-6_16\.666666', '2-5_40', '3-5_60'
+@each $value in '1-1_100', '1-2_50', '1-3_33.333', '1-4_25', '1-5_20', '1-6_16.666666', '2-5_40', '3-5_60'
   $values: str_split('#{$value}', '_')
   $width: nth($values, 2)
   $widthName: nth($values, 1)
@@ -22,9 +22,41 @@
     @media screen and (min-width: $large)
       width: unquote("#{$width}%")
 
-@each $value in 46  , 355, 420, 470, 550, 700, 710, 760, 840
+@each $value in 46, 250, 330, 355, 420, 470, 550, 600, 700, 710, 760, 840
   .fw-width-#{$value}
     width: #{$value}px
 
+  .fw-width-#{$value}\@xs
+    @media screen and (min-width: $extraSmall) and (max-width: $small)
+      width: #{$value}px
+
+  .fw-width-#{$value}\@s
+    @media screen and (min-width: $small) and (max-width: $medium)
+      width: #{$value}px
+
+  .fw-width-#{$value}\@m
+    @media screen and (min-width: $medium) and (max-width: $large)
+      width: #{$value}px
+
+  .fw-width-#{$value}\@l
+    @media screen and (min-width: $large)
+      width: #{$value}px
+
   .fw-max-width-#{$value}
     max-width: #{$value}px
+
+  .fw-max-width-#{$value}\@xs
+    @media screen and (min-width: $extraSmall) and (max-width: $small)
+      max-width: #{$value}px
+
+  .fw-max-width-#{$value}\@s
+    @media screen and (min-width: $small) and (max-width: $medium)
+      max-width: #{$value}px
+
+  .fw-max-width-#{$value}\@m
+    @media screen and (min-width: $medium) and (max-width: $large)
+      max-width: #{$value}px
+
+  .fw-max-width-#{$value}\@l
+    @media screen and (min-width: $large)
+      max-width: #{$value}px

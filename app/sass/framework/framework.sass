@@ -7,10 +7,23 @@
 @import "flex"
 @import "fonts"
 @import "border"
+@import "visibilities"
 
 @each $value in '1-2', '1-5', '1-7', '2'
   .fw-line-height-#{$value}
     line-height: unquote(str_replace($value, '-', '.'))
+
+.fw-clearfix
+  &::after
+    display: block
+    content: ''
+    clear: both
+
+.fw-float-left
+  float: left
+
+.fw-float-right
+  float: right
 
 .fw-text-uppercase
   text-transform: uppercase

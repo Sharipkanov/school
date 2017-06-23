@@ -269,13 +269,10 @@
         const $whyUsCarousel = $('#why-us-carousel');
 
         $whyUsCarousel.owlCarousel({
-            loop: false,
+            loop: true,
             nav: true,
-            items: 1
-        });
-
-        $whyUsCarousel.on('refreshed.owl.carousel', function(e) {
-            console.log(this)
+            items: 1,
+            dot: true
         });
 
         $(window).resize(function() {

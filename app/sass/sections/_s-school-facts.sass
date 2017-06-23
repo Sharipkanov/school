@@ -3,6 +3,19 @@
   position: relative
   overflow: hidden
 
+  &.s-school-facts--reverse
+    .s-school-facts__image
+      right: initial
+      left: 0
+
+    .s-school-facts__box
+      float: right
+      margin-left: 0
+      margin-right: -15px
+
+      @media screen and (max-width: 767px)
+        margin-right: 0
+
   .s-school-facts__image
     position: absolute
     right: 0
@@ -21,6 +34,7 @@
     box-sizing: border-box
     padding: 70px 80px 70px 95px
     margin-left: -15px
+    left: 0
 
     @media screen and (min-width: 1400px)
       width: calc(100% - 200px)

@@ -1,0 +1,22 @@
+.fw-visible
+  display: block
+
+.fw-visible\@xs
+  display: none
+  @media screen and (min-width: $extraSmall) and (max-width: $small)
+    display: block
+
+.fw-visible\@s
+  display: none
+  @media screen and (min-width: $small) and (max-width: $medium)
+    display: block
+
+.fw-visible\@m
+  display: none
+  @media screen and (min-width: $medium) and (max-width: $large)
+    display: block
+
+.fw-visible\@l
+  display: none
+  @media screen and (min-width: $large)
+    display: block
