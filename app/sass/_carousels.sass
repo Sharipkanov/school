@@ -3,31 +3,69 @@
   box-sizing: border-box
   padding: 0 60px
 
+  &#reviews-carousel
+    padding: 0
+
+  &#reviews-vk-carousel,
+  &#reviews-vk-thumbnail-carousel
+    .owl-nav
+      .owl-prev,
+      .owl-next
+        border: 2px solid #3c454e
+        border-radius: 50%
+
+        &::after
+          border-width: 2px
+          width: 10px
+          height: 10px
+          border-color: #3c454e
+          margin-left: -5px
+          margin-bottom: -5px
+
+
   .item
     box-sizing: border-box
 
   .owl-nav
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+    transform: translateY(-50%)
+    box-sizing: border-box
+    display: flex
+    justify-content: space-between
+
     .owl-prev,
     .owl-next
-      width: 20px
-      height: 20px
-      border-top: 1px solid $colorGrey
-      border-right: 1px solid $colorGrey
       font-size: 0
-      position: absolute
-      top: 50%
-      transform: translateY(-50%)
+      width: 30px
+      height: 30px
+      display: flex
+      align-items: center
+      justify-content: center
+
+      &::after
+        display: block
+        content: ''
+        width: 20px
+        height: 20px
+        border-top: 1px solid $colorGrey
+        border-right: 1px solid $colorGrey
+        margin: 0
+        font-size: 0
 
       @media screen and (max-width: 767px)
-        width: 10px
-        height: 10px
+        .owl-prev,
+        .owl-next
+          &::after
+            width: 10px
+            height: 10px
 
     .owl-prev
-      left: 25px
       transform: rotate(-135deg)
 
     .owl-next
-      right: 25px
       transform: rotate(45deg)
 
     @media screen and (max-width: 479px)

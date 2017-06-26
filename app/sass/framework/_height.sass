@@ -1,7 +1,7 @@
 .fw-max-height-percent-100
   max-height: 100%
 
-@each $value in 1
+@each $value in 1, 50, 205, 280
   .fw-height-#{$value}
     height: #{$value}px
 
@@ -39,3 +39,22 @@
   .fw-max-height-#{$value}\@l
     @media screen and (min-height: $large)
       max-height: #{$value}px
+
+  .fw-min-height-#{$value}
+    min-height: #{$value}px
+
+  .fw-min-height-#{$value}\@xs
+    @media screen and (min-height: $extraSmall)
+      min-height: #{$value}px
+
+  .fw-min-height-#{$value}\@s
+    @media screen and (min-height: $small)
+      min-height: #{$value}px
+
+  .fw-min-height-#{$value}\@m
+    @media screen and (min-height: $medium)
+      min-height: #{$value}px
+
+  .fw-min-height-#{$value}\@l
+    @media screen and (min-height: $large)
+      min-height: #{$value}px

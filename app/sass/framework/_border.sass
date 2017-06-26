@@ -14,8 +14,11 @@
   .fw-border-right-#{$value}
     border-right-width: #{$value}px
 
-@each $value in 5
+@each $value in 5, 50
   .fw-border-radius-#{$value}
+    border-radius: #{$value}px
+
+  .fw-border-radius-percent-#{$value}
     border-radius: #{$value}px
 
 @each $value in white_#{$colorWhite}, yellow_#{$colorYellow}, black_#{$colorBlack}, blue_#{$colorBlue}, grey-light_#{$colorGreyLight}

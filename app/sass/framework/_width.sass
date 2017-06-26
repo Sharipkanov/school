@@ -1,7 +1,26 @@
 .fw-max-width-percent-100
   max-width: 100%
 
-@each $value in '1-1_100', '1-2_50', '1-3_33.333', '1-4_25', '1-5_20', '1-6_16.666666', '2-5_40', '3-5_60'
+.fw-width-auto
+  width: auto
+
+.fw-width-auto\@xs
+  @media screen and (min-width: $extraSmall)
+    width: auto
+
+.fw-width-auto\@s
+  @media screen and (min-width: $small)
+    width: auto
+
+.fw-width-auto\@m
+  @media screen and (min-width: $medium)
+    width: auto
+
+.fw-width-auto\@l
+  @media screen and (min-width: $large)
+    width: auto
+
+@each $value in '1-1_100', '1-2_50', '1-3_33.333', '2-3_66.666', '1-4_25', '1-5_20', '1-6_16.666666', '1-5_20', '2-5_40', '3-5_60', '2-6_32.332', '4-6_66.668'
   $values: str_split('#{$value}', '_')
   $width: nth($values, 2)
   $widthName: nth($values, 1)
@@ -25,7 +44,7 @@
     @media screen and (min-width: $large)
       width: unquote("#{$width}%")
 
-@each $value in 40, 46, 250, 330, 355, 420, 470, 550, 600, 700, 710, 760, 800, 840
+@each $value in 40, 46, 50, 220, 290, 330, 355, 400, 420, 470, 550, 600, 700, 710, 760, 800, 840, 850
   .fw-width-#{$value}
     width: #{$value}px
 

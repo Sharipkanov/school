@@ -270,16 +270,65 @@
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
 
         var $whyUsCarousel = $('#why-us-carousel');
+        var $reviewsCarousel = $('#reviews-carousel');
+        var $reviewsVkCarousel = $('#reviews-vk-carousel');
+        var $reviewsVkThumbnailCarousel = $('#reviews-vk-thumbnail-carousel');
 
         $whyUsCarousel.owlCarousel({
             loop: true,
             nav: true,
             items: 1,
-            dot: true
+            dots: true
+        });
+
+        $reviewsCarousel.owlCarousel({
+            loop: false,
+            nav: false,
+            items: 1,
+            dots: false
+        });
+
+        $reviewsVkCarousel.owlCarousel({
+            loop: true,
+            nav: true,
+            items: 1,
+            dots: false
+        });
+
+        $reviewsVkThumbnailCarousel.owlCarousel({
+            loop: true,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            },
+            margin: 20,
+            dots: false
+        });
+
+        $reviewsCarousel.find('.owl-next').click(function (e) {
+            e.preventDefault();
+
+            $reviewsCarousel.trigger('next.owl.carousel');
+        });
+
+        $reviewsCarousel.find('.owl-prev').click(function (e) {
+            e.preventDefault();
+
+            $reviewsCarousel.trigger('prev.owl.carousel');
         });
 
         $(window).resize(function () {
             $whyUsCarousel.trigger('refresh.owl.carousel');
+            $reviewsCarousel.trigger('refresh.owl.carousel');
+            $reviewsVkThumbnailCarousel.trigger('refresh.owl.carousel');
         });
     });
 })();
