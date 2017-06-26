@@ -1,21 +1,44 @@
 .header
   background-color: #ffd42d
-  width: 295px
   flex-grow: 0
   flex-shrink: 0
   box-sizing: border-box
-  padding: 60px 0 20px 30px
   min-height: 100vh
+  position: fixed
+  z-index: 99
+  display: flex
+
+  .header__toggle
+    padding: 15px
+    display: none
+
+    @media screen and (max-width: 959px)
+      display: block
+
+  .header__content
+    display: flex
+    flex-direction: column
+    width: 295px
+    padding-top: 60px
+    padding-left: 30px
+    padding-bottom: 20px
+    opacity: 1
+    transition: width .2s ease-in-out, opacity .4s ease-in-out, padding-left .2s ease-out
+
+    &.header__content--active
+      width: 295px
+      box-shadow: 10px 0 5px -2px rgba($colorBlack, .3)
+      overflow: initial
+      opacity: 1
+      padding-left: 30px
+      border-left: 1px solid $colorGreyLight
 
   @media screen and (max-width: 959px)
-    width: calc(55px + 30px)
-    padding: 15px
-
-  @media screen and (max-width: 767px)
-    width: initial
-    padding: 10px
-    min-height: initial
-    box-shadow: 0 0 60px 20px rgba(#000, .1)
+    .header__content
+      width: 0
+      overflow: hidden
+      opacity: 0
+      padding-left: 0
 
   .header__info
     padding: 7px 8px

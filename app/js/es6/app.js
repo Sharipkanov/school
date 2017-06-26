@@ -327,6 +327,42 @@
             $reviewsCarousel.trigger('refresh.owl.carousel');
             $reviewsVkThumbnailCarousel.trigger('refresh.owl.carousel');
         });
+
+        $('.navigation__item.navigation__item--sub > .navigation__link').click(function (e) {
+            e.preventDefault();
+
+            const $link = $(this);
+            const $parentListItem = $link.parent();
+            const parentListItemClass = 'navigation__item--active';
+
+            if ($parentListItem.hasClass(parentListItemClass)) {
+                $parentListItem.removeClass(parentListItemClass);
+            } else {
+                $parentListItem.addClass(parentListItemClass);
+            }
+        });
+
+        $('.navigation__item.navigation__item--back .navigation__link').click(function (e) {
+            e.preventDefault();
+
+            const $link = $(this);
+            const $parentListItem = $link.closest('.navigation__item.navigation__item--sub');
+
+            $parentListItem.removeClass('navigation__item--active');
+        });
+    });
+
+    $('.header__toggle > a').click(function (e) {
+        e.preventDefault();
+
+        const $trigger = $(this);
+        const $header = $trigger.closest('.header');
+        const $headerContent = $header.find('.header__content');
+        const headerContentActiveClass = 'header__content--active';
+
+        ($headerContent.hasClass(headerContentActiveClass))
+            ? $headerContent.removeClass(headerContentActiveClass)
+            : $headerContent.addClass(headerContentActiveClass);
     });
 
 })();

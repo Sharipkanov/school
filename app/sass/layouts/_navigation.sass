@@ -2,20 +2,85 @@
   margin: 0
   padding: 0
   list-style: none
-
-  @media screen and (max-width: 959px)
-    display: none
+  position: relative
+  background-color: #ffd42d
+  overflow: hidden
+  min-height: 450px
 
   .navigation__item
-    position: relative
-    
     &.navigation__item--active
-      .navigation__link
+      > .navigation__link
         background-color: #faf27e
+
+      &.navigation__item--sub
+        &.navigation__item--header
+          .navigation__link
+            background: #fabf26
+
+        .navigation__sub
+          right: 0
+
+    &.navigation__item--sub
+      > .navigation__link
+        > span
+          &::after
+            position: absolute
+            top: 50%
+            transform: translateY(-50%) rotate(45deg)
+            right: 2px
+            display: block
+            content: ''
+            border-top: 2px solid #3c454e
+            border-right: 2px solid #3c454e
+            width: 6px
+            height: 6px
+
+  .navigation__item--header
+    .navigation__link
+      pointer-events: none
+      background: #fabf26
+      border-left: 5px solid $colorBlue
+
+      > span
+        width: 100%
+        &::after
+          position: absolute
+          top: 50%
+          transform: translateY(-50%) rotate(135deg)
+          right: 2px
+          display: block
+          content: ''
+          border-top: 2px solid #3c454e
+          border-right: 2px solid #3c454e
+          width: 6px
+          height: 6px
+
+      &:hover
+        background: #fabf26
+        
+  .navigation__item--back
+    .navigation__link
+      font-size: 14px
+      text-transform: capitalize
+
+      > span
+        width: 100%
+        padding-right: 0
+        padding-left: 15px
+        &::after
+          position: absolute
+          top: 50%
+          transform: translateY(-50%) rotate(-135deg)
+          left: 2px
+          display: block
+          content: ''
+          border-top: 2px solid #3c454e
+          border-right: 2px solid #3c454e
+          width: 6px
+          height: 6px
 
   .navigation__link
     transition: all .3s ease-in-out
-    position: relative
     display: flex
     line-height: 30px
     overflow: hidden
@@ -31,5 +96,26 @@
     font-size: 16px
     font-style: normal
 
+    > span
+      position: relative
+      padding-right: 15px
+      box-sizing: border-box
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+
     &:hover
       background-color: #faf27e
+
+  .navigation__sub
+    list-style: none
+    position: absolute
+    margin: 0
+    padding: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: #ffd42d
+    z-index: 1
+    right: -100%
+    transition: all .3s ease-in-out

@@ -26,6 +26,10 @@ a
   display: flex
   flex-direction: column
   min-width: 0
+  margin-left: 325px
+
+  @media screen and (max-width: 959px)
+    margin-left: 43px
 
 .container
   padding: 0 15px
@@ -84,24 +88,23 @@ a
       background-color: $colorWhite
       color: $colorBlack
 
+  &.button-transparent-black
+    background-color: transparent
+    color:  #3c454e
+    border-color:  #3c454e
+
+    &:hover
+      box-shadow: 0 0 5px #3c454e
+
 .b-logo
   display: flex
   align-items: center
   margin-bottom: 35px
 
-  @media screen and (max-width: 767px)
-    margin-bottom: 0
-
   .b-logo__image
     max-width: 55px
     flex-shrink: 0
     margin-right: 10px
-
-    @media screen and (max-width: 959px)
-      margin-left: auto
-
-    @media screen and (max-width: 767px)
-      max-width: 30px
 
   .b-logo__text
     flex-grow: 1
@@ -111,9 +114,6 @@ a
     text-transform: capitalize
     font-size: 24px
     margin: 0
-
-    @media screen and (max-width: 959px)
-      display: none
 
 .s-vg-courses
   .s-vg-courses__title
