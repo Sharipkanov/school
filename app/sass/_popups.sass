@@ -1,0 +1,99 @@
+html.popup-opened
+  overflow: hidden
+
+.popup-wrapper
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(#000, .7)
+  z-index: 999
+  display: flex
+  visibility: hidden
+  transition: visibility .5s ease-in-out
+  overflow: auto
+  perspective: 3000px
+  box-sizing: border-box
+  padding: 20px 0
+
+  @media screen and (max-width: 767px)
+    padding: 15px
+
+  &.opened
+    visibility: visible
+
+    .popup
+      transform: rotateX(0)
+
+  .popup
+    transform: rotateX(90deg)
+    transform-style: preserve-3d
+    margin-left: auto
+    margin-top: auto
+    margin-bottom: auto
+    min-width: 300px
+    transition: all .3s ease-in-out
+    background: url("../images/popup.bg.jpg") center center no-repeat #fff
+    background-size: cover
+    max-width: 970px
+    width: 100%
+    padding: 60px 50px 60px 30px
+
+    @media screen and (max-width: 767px)
+      padding: 50px 40px 50px 20px
+
+    &.popup--boxed
+      box-sizing: border-box
+      padding: 20px
+
+    &.popup--boxed-large
+      box-sizing: border-box
+      padding: 50px
+
+    &.popup--boxed-medium
+      box-sizing: border-box
+      padding: 50px 30px
+
+    &.popup--rounded
+      border-radius: 10px
+      overflow: hidden
+
+    .popup__container
+      position: relative
+      padding: 20px
+
+    .popup__close
+      position: absolute
+      top: 10px
+      right: 10px
+      width: 26px
+      background-color: transparent
+      height: 26px
+      transform: rotate(45deg)
+
+      @media  screen and (max-width: 767px)
+        width: 18px
+        height: 18px
+
+      &::after,
+      &::before
+        display: block
+        content: ''
+        position: absolute
+        background-color: $colorGreyDark
+
+      &:after
+        width: 100%
+        height: 2px
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+
+
+      &::before
+        width: 2px
+        height: 100%
+        left: 50%
+        top: 0
+        transform: translateX(-50%)

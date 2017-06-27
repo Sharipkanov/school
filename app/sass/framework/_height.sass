@@ -1,7 +1,31 @@
 .fw-max-height-percent-100
   max-height: 100%
 
-@each $value in 1, 50, 205, 280
+@each $value in '1-1_100'
+  $values: str_split('#{$value}', '_')
+  $width: nth($values, 2)
+  $widthName: nth($values, 1)
+
+  .fw-height-#{$widthName}
+    height: unquote("#{$width}%")
+
+  .fw-height-#{$widthName}\@xs
+    @media screen and (min-width: $extraSmall)
+      height: unquote("#{$width}%")
+
+  .fw-height-#{$widthName}\@s
+    @media screen and (min-width: $small)
+      height: unquote("#{$width}%")
+
+  .fw-height-#{$widthName}\@m
+    @media screen and (min-width: $medium)
+      height: unquote("#{$width}%")
+
+  .fw-height-#{$widthName}\@l
+    @media screen and (min-width: $large)
+      height: unquote("#{$width}%")
+
+@each $value in 1, 38, 50, 205, 240, 280, 495
   .fw-height-#{$value}
     height: #{$value}px
 

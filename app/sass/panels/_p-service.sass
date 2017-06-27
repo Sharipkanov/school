@@ -3,7 +3,40 @@
   height: 100%
 
   @media screen and (max-width: 767px)
-    height: 300px
+    min-height: 350px
+
+  &.p-service--teacher
+
+    .p-service__cover
+      padding: 0
+
+      @media screen and (min-width: 768px)
+        &:hover
+          .p-service--teacher__left
+            opacity: 1
+
+      @media screen and (max-width: 767px)
+        background-color: rgba($colorBlack, .7)
+
+    .p-service--teacher__left,
+    .p-service--teacher__right
+      background-color: rgba($colorBlack, .7)
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      padding: 20px
+      box-sizing: border-box
+
+      @media screen and (max-width: 767px)
+        background-color: transparent
+
+    .p-service--teacher__left
+      opacity: 0
+      transition: all .4s ease-in-out
+
+      @media screen and (max-width: 767px)
+        opacity: 1
 
   .p-service__thumbnail
     width: 100%

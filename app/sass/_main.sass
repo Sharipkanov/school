@@ -54,6 +54,20 @@ a
   border-width: 1px
   border-style: solid
 
+  &.button-arrow
+    display: inline-flex
+    align-items: center
+
+    &::after
+      display: inline-block
+      content: ''
+      width: 4px
+      height: 4px
+      border-top: 2px solid $colorBlue
+      border-left: 2px solid $colorBlue
+      transform: rotate(135deg)
+      margin-left: 5px
+
   &.button-center
     text-align: center
 
@@ -68,6 +82,10 @@ a
     color: $colorBlack
     border-color: $colorYellow
 
+    &.button-arrow
+      &::after
+        border-color: $colorBlack
+
     &:hover
       background-color: $colorYellow * .9
 
@@ -75,6 +93,10 @@ a
     background-color: $colorRed
     color: $colorWhite
     border-color: $colorRed
+
+    &.button-arrow
+      &::after
+        border-color: $colorWhite
 
     &:hover
       background-color: $colorRed * .9
@@ -84,6 +106,10 @@ a
     color: $colorWhite
     border-color: $colorWhite
 
+    &.button-arrow
+      &::after
+        border-color: $colorWhite
+
     &:hover
       background-color: $colorWhite
       color: $colorBlack
@@ -92,6 +118,10 @@ a
     background-color: transparent
     color:  #3c454e
     border-color:  #3c454e
+
+    &.button-arrow
+      &::after
+        border-color: #3c454e
 
     &:hover
       box-shadow: 0 0 5px #3c454e

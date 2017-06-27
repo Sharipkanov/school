@@ -166,6 +166,8 @@
     };
 
     YOURAPPNAME.prototype.popups = function (options) {
+        var _self = this;
+
         var defaults = {
             reachElementClass: '.js-popup',
             closePopupClass: '.js-close-popup',
@@ -189,6 +191,7 @@
         plugin.openPopup = function (popupName) {
             plugin.reachPopups.filter('[data-popup="' + popupName + '"]').addClass('opened');
             plugin.bodyEl.css('overflow-y', 'scroll');
+            // plugin.topPanelEl.css('padding-right', scrollSettings.width);
             plugin.htmlEl.addClass('popup-opened');
         };
 
@@ -198,7 +201,7 @@
                 plugin.bodyEl.removeAttr('style');
                 plugin.htmlEl.removeClass('popup-opened');
                 plugin.topPanelEl.removeAttr('style');
-            }, 500);
+            }, 300);
         };
 
         plugin.changePopup = function (closingPopup, openingPopup) {
@@ -213,14 +216,14 @@
         plugin.bindings = function () {
             plugin.openPopupEl.on('click', function (e) {
                 e.preventDefault();
-                var pop = $(this).attr('data-open-popup');
+                var pop = $(this).attr('data-popup-target');
                 plugin.openPopup(pop);
             });
 
-            plugin.closePopupEl.on('click', function () {
+            plugin.closePopupEl.on('click', function (e) {
                 var pop = void 0;
-                if (this.hasAttribute('data-close-popup')) {
-                    pop = $(this).attr('data-close-popup');
+                if (this.hasAttribute('data-popup-target')) {
+                    pop = $(this).attr('data-popup-target');
                 } else {
                     pop = $(this).closest(options.reachElementClass).attr('data-popup');
                 }
@@ -228,7 +231,7 @@
                 plugin.closePopup(pop);
             });
 
-            plugin.changePopupEl.on('click', function () {
+            plugin.changePopupEl.on('click', function (e) {
                 var closingPop = $(this).attr('data-closing-popup');
                 var openingPop = $(this).attr('data-opening-popup');
 
@@ -268,6 +271,8 @@
         console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+
+        app.popups();
 
         var $whyUsCarousel = $('#why-us-carousel');
         var $reviewsCarousel = $('#reviews-carousel');

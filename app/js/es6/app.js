@@ -161,8 +161,10 @@
         return options;
     };
 
-    YOURAPPNAME.prototype.popups = function (options) {
-        const defaults = {
+    YOURAPPNAME.prototype.popups = function(options) {
+        let _self = this;
+
+        let defaults = {
             reachElementClass: '.js-popup',
             closePopupClass: '.js-close-popup',
             currentElementClass: '.js-open-popup',
@@ -171,7 +173,7 @@
 
         options = $.extend({}, options, defaults);
 
-        const plugin = {
+        let plugin = {
             reachPopups: $(options.reachElementClass),
             bodyEl: $('body'),
             topPanelEl: $('.top-panel-wrapper'),
@@ -185,6 +187,7 @@
         plugin.openPopup = function (popupName) {
             plugin.reachPopups.filter('[data-popup="' + popupName + '"]').addClass('opened');
             plugin.bodyEl.css('overflow-y', 'scroll');
+            // plugin.topPanelEl.css('padding-right', scrollSettings.width);
             plugin.htmlEl.addClass('popup-opened');
         };
 
@@ -194,7 +197,7 @@
                 plugin.bodyEl.removeAttr('style');
                 plugin.htmlEl.removeClass('popup-opened');
                 plugin.topPanelEl.removeAttr('style');
-            }, 500);
+            }, 300);
         };
 
         plugin.changePopup = function (closingPopup, openingPopup) {
@@ -209,14 +212,14 @@
         plugin.bindings = function () {
             plugin.openPopupEl.on('click', function (e) {
                 e.preventDefault();
-                const pop = $(this).attr('data-open-popup');
+                let pop = $(this).attr('data-popup-target');
                 plugin.openPopup(pop);
             });
 
-            plugin.closePopupEl.on('click', function () {
+            plugin.closePopupEl.on('click', function (e) {
                 let pop;
-                if (this.hasAttribute('data-close-popup')) {
-                    pop = $(this).attr('data-close-popup');
+                if (this.hasAttribute('data-popup-target')) {
+                    pop = $(this).attr('data-popup-target');
                 } else {
                     pop = $(this).closest(options.reachElementClass).attr('data-popup');
                 }
@@ -224,16 +227,16 @@
                 plugin.closePopup(pop);
             });
 
-            plugin.changePopupEl.on('click', function () {
-                const closingPop = $(this).attr('data-closing-popup');
-                const openingPop = $(this).attr('data-opening-popup');
+            plugin.changePopupEl.on('click', function (e) {
+                let closingPop = $(this).attr('data-closing-popup');
+                let openingPop = $(this).attr('data-opening-popup');
 
                 plugin.changePopup(closingPop, openingPop);
             });
 
             plugin.reachPopups.on('click', function (e) {
-                const target = $(e.target);
-                const className = options.reachElementClass.replace('.', '');
+                let target = $(e.target);
+                let className = options.reachElementClass.replace('.', '');
                 if (target.hasClass(className)) {
                     plugin.closePopup($(e.target).attr('data-popup'));
                 }
@@ -265,6 +268,8 @@
         console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+
+        app.popups();
 
         const $whyUsCarousel = $('#why-us-carousel');
         const $reviewsCarousel = $('#reviews-carousel');
