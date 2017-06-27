@@ -362,12 +362,19 @@
 
         const $trigger = $(this);
         const $header = $trigger.closest('.header');
+        const headerActiveClass = 'header--active';
         const $headerContent = $header.find('.header__content');
         const headerContentActiveClass = 'header__content--active';
 
-        ($headerContent.hasClass(headerContentActiveClass))
-            ? $headerContent.removeClass(headerContentActiveClass)
-            : $headerContent.addClass(headerContentActiveClass);
+        if ($headerContent.hasClass(headerContentActiveClass)) {
+            $headerContent.removeClass(headerContentActiveClass);
+            $header.removeClass(headerActiveClass);
+            $(document.querySelector('html')).removeClass('menu-opened');
+        } else {
+            $headerContent.addClass(headerContentActiveClass);
+            $header.addClass(headerActiveClass);
+            $(document.querySelector('html')).addClass('menu-opened');
+        }
     });
 
 })();

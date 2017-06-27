@@ -365,9 +365,18 @@
 
         var $trigger = $(this);
         var $header = $trigger.closest('.header');
+        var headerActiveClass = 'header--active';
         var $headerContent = $header.find('.header__content');
         var headerContentActiveClass = 'header__content--active';
 
-        $headerContent.hasClass(headerContentActiveClass) ? $headerContent.removeClass(headerContentActiveClass) : $headerContent.addClass(headerContentActiveClass);
+        if ($headerContent.hasClass(headerContentActiveClass)) {
+            $headerContent.removeClass(headerContentActiveClass);
+            $header.removeClass(headerActiveClass);
+            $(document.querySelector('html')).removeClass('menu-opened');
+        } else {
+            $headerContent.addClass(headerContentActiveClass);
+            $header.addClass(headerActiveClass);
+            $(document.querySelector('html')).addClass('menu-opened');
+        }
     });
 })();
