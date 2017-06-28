@@ -34,14 +34,19 @@
 
 .fw-check-mark
   position: relative
-  display: flex
+  //display: flex
+  display: block
+  padding-left: 25px
 
   &::before
     content: url("../images/icons/icon.check.mark.png")
     display: block
     margin-top: 2px
     margin-right: 5px
-    flex-shrink: 0
+    position: absolute
+    top: -3px
+    left: 0
+
 
 @each $value in 100
   .fw-box-proportional-#{$value}
