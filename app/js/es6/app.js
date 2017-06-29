@@ -278,13 +278,13 @@
 
         $whyUsCarousel.owlCarousel({
             loop: true,
-            nav: true,
+            nav: false,
             items: 1,
             dots: true
         });
 
         $reviewsCarousel.owlCarousel({
-            loop: false,
+            loop: true,
             nav: false,
             items: 1,
             dots: false
@@ -294,7 +294,17 @@
             loop: true,
             nav: true,
             items: 1,
-            dots: false
+            dots: false,
+            responsive: {
+                0: {
+                    nav: false,
+                    dots: true
+                },
+                600: {
+                    nav: true,
+                    dots: false
+                }
+            }
         });
 
         $reviewsVkThumbnailCarousel.owlCarousel({
@@ -302,7 +312,9 @@
             nav: true,
             responsive:{
                 0:{
-                    items:1
+                    items:1,
+                    nav: false,
+                    dots: true
                 },
                 600:{
                     items:3
