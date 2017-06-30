@@ -252,6 +252,22 @@
         return plugin;
     };
 
+    YOURAPPNAME.prototype.parallax = function (selector) {
+        var blocks = $(selector);
+
+        blocks.each(function () {
+            var $this = $(this);
+
+            $(window).scroll(function () {
+                var $scrollTop = $(window).scrollTop() * .8;
+                $this.css({
+                    position: 'relative',
+                    top: $scrollTop
+                });
+            });
+        });
+    };
+
     var app = new YOURAPPNAME(document);
 
     app.appLoad('loading', function () {
@@ -391,4 +407,6 @@
             $(document.querySelector('html')).addClass('menu-opened');
         }
     });
+
+    app.parallax('[data-parallax]');
 })();
