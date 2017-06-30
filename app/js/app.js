@@ -255,17 +255,33 @@
     YOURAPPNAME.prototype.parallax = function (selector) {
         var blocks = $(selector);
 
-        blocks.each(function () {
-            var $this = $(this);
+        function getOffset() {
+            return parseInt($('.content').css('margin-left'));
+        }
 
-            $(window).scroll(function () {
-                var $scrollTop = $(window).scrollTop() * .8;
+        function renderOffset() {
+            blocks.each(function () {
+                var $this = $(this);
+                var $height = $this.outerHeight();
+
                 $this.css({
-                    position: 'relative',
-                    top: $scrollTop
-                });
+                    left: $offset
+                }).addClass('parallax-active');
+
+                $this.next('[data-parallax-placeholder]').css({ height: $height });
+
+                console.log($this.next('[data-parallax-placeholder]'));
             });
+        }
+
+        var $offset = getOffset();
+
+        $(window).resize(function () {
+            $offset = getOffset();
+            renderOffset();
         });
+
+        renderOffset();
     };
 
     var app = new YOURAPPNAME(document);
@@ -289,6 +305,7 @@
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
 
         app.popups();
+        app.parallax('[data-parallax]');
 
         var $whyUsCarousel = $('#why-us-carousel');
         var $reviewsCarousel = $('#reviews-carousel');
@@ -407,6 +424,4 @@
             $(document.querySelector('html')).addClass('menu-opened');
         }
     });
-
-    app.parallax('[data-parallax]');
 })();

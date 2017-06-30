@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     function YOURAPPNAME(doc) {
         const _self = this;
@@ -6,7 +6,7 @@
         _self.doc = doc;
         _self.window = window;
         _self.html = _self.doc.querySelector('html');
-        _self.body= _self.doc.body;
+        _self.body = _self.doc.body;
         _self.location = location;
         _self.hash = location.hash;
         _self.Object = Object;
@@ -15,7 +15,7 @@
         _self.bootstrap();
     }
 
-    YOURAPPNAME.prototype.bootstrap = function() {
+    YOURAPPNAME.prototype.bootstrap = function () {
         const _self = this;
 
         // Initialize window scollBar width
@@ -23,10 +23,10 @@
     };
 
     // Window load types (loading, dom, full)
-    YOURAPPNAME.prototype.appLoad  = function (type, callback) {
+    YOURAPPNAME.prototype.appLoad = function (type, callback) {
         const _self = this;
 
-        switch(type) {
+        switch (type) {
             case 'loading':
                 if (_self.doc.readyState === 'loading') callback();
 
@@ -38,7 +38,7 @@
 
                 break;
             case 'full':
-                _self.window.onload = function(e) {
+                _self.window.onload = function (e) {
                     callback(e);
                 };
 
@@ -49,7 +49,7 @@
     };
 
     // Detect scroll default scrollBar width (return a number)
-    YOURAPPNAME.prototype.scrollBarWidth = function() {
+    YOURAPPNAME.prototype.scrollBarWidth = function () {
         const _self = this,
             outer = _self.doc.createElement("div");
         outer.style.visibility = "hidden";
@@ -128,26 +128,32 @@
         }
     };
 
-    YOURAPPNAME.prototype.str2json = function(str, notevil) {
+    YOURAPPNAME.prototype.str2json = function (str, notevil) {
         try {
             if (notevil) {
                 return JSON.parse(str
-                    .replace(/([\$\w]+)\s*:/g, function(_, $1){return '"'+$1+'":';})
-                    .replace(/'([^']+)'/g, function(_, $1){return '"'+$1+'"';})
+                    .replace(/([\$\w]+)\s*:/g, function (_, $1) {
+                        return '"' + $1 + '":';
+                    })
+                    .replace(/'([^']+)'/g, function (_, $1) {
+                        return '"' + $1 + '"';
+                    })
                 );
             } else {
                 return (new Function("", "const json = " + str + "; return JSON.parse(JSON.stringify(json));"))();
             }
-        } catch(e) { return false; }
+        } catch (e) {
+            return false;
+        }
     };
 
-    YOURAPPNAME.prototype.options = function(string) {
+    YOURAPPNAME.prototype.options = function (string) {
         const _self = this;
 
         if (typeof string !== 'string') return string;
 
         if (string.indexOf(':') !== -1 && string.trim().substr(-1) !== '}') {
-            string = '{'+string+'}';
+            string = '{' + string + '}';
         }
 
         let start = (string ? string.indexOf("{") : -1), options = {};
@@ -155,13 +161,14 @@
         if (start !== -1) {
             try {
                 options = _self.str2json(string.substr(start));
-            } catch (e) {}
+            } catch (e) {
+            }
         }
 
         return options;
     };
 
-    YOURAPPNAME.prototype.popups = function(options) {
+    YOURAPPNAME.prototype.popups = function (options) {
         let _self = this;
 
         let defaults = {
@@ -252,17 +259,34 @@
     YOURAPPNAME.prototype.parallax = function (selector) {
         let blocks = $(selector);
 
-        blocks.each(function () {
-            let $this = $(this);
+        function getOffset() {
+            return parseInt($('.content').css('margin-left'));
+        }
 
-            $(window).scroll(function () {
-                let $scrollTop = $(window).scrollTop()*.8;
+        function renderOffset() {
+            blocks.each(function () {
+                let $this = $(this);
+                let $height = $this.outerHeight();
+
                 $this.css({
-                    position: 'relative',
-                    top: $scrollTop
-                })
+                    left: $offset
+                }).addClass('parallax-active');
+
+                $this.next('[data-parallax-placeholder]').css({height: $height});
+
+                console.log($this.next('[data-parallax-placeholder]'))
             });
+        }
+
+        let $offset = getOffset();
+
+        $(window).resize(function () {
+            $offset = getOffset();
+            renderOffset();
         });
+
+
+        renderOffset();
     };
 
     const app = new YOURAPPNAME(document);
@@ -286,6 +310,7 @@
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
 
         app.popups();
+        app.parallax('[data-parallax]');
 
         const $whyUsCarousel = $('#why-us-carousel');
         const $reviewsCarousel = $('#reviews-carousel');
@@ -326,36 +351,36 @@
         $reviewsVkThumbnailCarousel.owlCarousel({
             loop: true,
             nav: true,
-            responsive:{
-                0:{
-                    items:1,
+            responsive: {
+                0: {
+                    items: 1,
                     nav: false,
                     dots: true
                 },
-                600:{
-                    items:3
+                600: {
+                    items: 3
                 },
-                1000:{
-                    items:5
+                1000: {
+                    items: 5
                 }
             },
             margin: 20,
             dots: false
         });
 
-        $reviewsCarousel.find('.owl-next').click(function(e) {
+        $reviewsCarousel.find('.owl-next').click(function (e) {
             e.preventDefault();
 
             $reviewsCarousel.trigger('next.owl.carousel');
         });
 
-        $reviewsCarousel.find('.owl-prev').click(function(e) {
+        $reviewsCarousel.find('.owl-prev').click(function (e) {
             e.preventDefault();
 
             $reviewsCarousel.trigger('prev.owl.carousel');
         });
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             $whyUsCarousel.trigger('refresh.owl.carousel');
             $reviewsCarousel.trigger('refresh.owl.carousel');
             $reviewsVkThumbnailCarousel.trigger('refresh.owl.carousel');
@@ -404,7 +429,4 @@
             $(document.querySelector('html')).addClass('menu-opened');
         }
     });
-
-    app.parallax('[data-parallax]');
-
 })();
