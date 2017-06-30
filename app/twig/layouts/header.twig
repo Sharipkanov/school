@@ -6,7 +6,7 @@
             <img src="images/logo.svg" alt="" class="b-logo__image">
             <p class="b-logo__text">Веры <br> горпинич</p>
         </div>
-        {% include 'navigation.twig' %}
+        {% include 'navigation.twig' with {'page': page} %}
         <div class="fw-mt-auto fw-pr-20">
             <a href="#" class="button button-transparent-black"><div class="fw-flex fw-flex-center fw-flex-middle"><i class="icon icon-lock fw-mr-5"></i> Личный кабинет</div></a>
             <div class="fw-border-top-2 fw-border-style-dashed fw-border-color-grey-light fw-mt-20">

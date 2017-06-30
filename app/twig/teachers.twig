@@ -1,16 +1,52 @@
 {% extends 'layouts/app.twig' %}
 
-{% block pageTitle %}Блог{% endblock %}
+{% block pageTitle %}Наши преподаватели{% endblock %}
+
+{% set page = 'teachers' %}
+
+{% block menu %}
+    <ul class="navigation">
+        <li class="navigation__item navigation__item--active"><a href="index.html" class="navigation__link"><span>ГЛАВНАЯ</span></a></li>
+        <li class="navigation__item navigation__item--sub">
+            <a href="#" class="navigation__link"><span>О ШКОЛЕ</span></a>
+            <ul class="navigation__sub">
+                <li class="navigation__item navigation__item--back"><a href="#" class="navigation__link"><span>Назад</span></a></li>
+                <li class="navigation__item navigation__item--header"><a href="#" class="navigation__link"><span>О ШКОЛЕ</span></a></li>
+                <li class="navigation__item"><a href="teachers.html" class="navigation__link"><span>Наши преподаватели</span></a></li>
+                <li class="navigation__item"><a href="blog.html" class="navigation__link"><span>Блог</span></a></li>
+                <li class="navigation__item"><a href="reviews.html" class="navigation__link"><span>Отзывы</span></a></li>
+                <li class="navigation__item"><a href="schedule.html" class="navigation__link"><span>Расписание</span></a></li>
+            </ul>
+        </li>
+        <li class="navigation__item navigation__item--sub">
+            <a href="#" class="navigation__link"><span>КУРСЫ</span></a>
+            <ul class="navigation__sub">
+                <li class="navigation__item navigation__item--back"><a href="#" class="navigation__link"><span>Назад</span></a></li>
+                <li class="navigation__item navigation__item--header"><a href="#" class="navigation__link"><span>КУРСЫ</span></a></li>
+                <li class="navigation__item"><a href="conversational-english.html" class="navigation__link"><span>Разговорный английский</span></a></li>
+                <li class="navigation__item"><a href="school-for-tourists.html" class="navigation__link"><span>Английский для туристов</span></a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link"><span>VIP-обучение</span></a></li>
+                <li class="navigation__item"><a href="individual-courses.html" class="navigation__link"><span>Индивидуальное обучение</span></a></li>
+                <li class="navigation__item"><a href="best-teacher.html" class="navigation__link"><span>Ведущий преподаватель</span></a></li>
+                <li class="navigation__item"><a href="business-english.html" class="navigation__link"><span>Деловой английский</span></a></li>
+            </ul>
+        </li>
+        <li class="navigation__item"><a href="shop.html" class="navigation__link"><span>МАГАЗИН</span></a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link"><span>КОНТАКТЫ</span></a></li>
+    </ul>
+{% endblock %}
 
 {% block content %}
-    <div class="fw-pt-40 fw-pt-80@l fw-pb-40 fw-pb-80@l fw-bg-cover fw-bg-center fw-bg-no-repeat fw-bg-fixed" style="background-image: url('images/pages/teachers/bg.jpg')">
+    <div class="fw-pt-40 fw-pt-80@l fw-pb-40 fw-pb-80@l fw-bg-cover fw-bg-center fw-bg-no-repeat fw-bg-fixed"
+         style="background-image: url('images/pages/teachers/bg.jpg')">
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div class="fw-mb-50">
                     {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'О школе', 'Наши преподаватели']} %}
                 </div>
                 <div class="fw-max-width-700">
-                    <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-54@m fw-line-height-1-2">Наши преподаватели</p>
+                    <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-54@m fw-line-height-1-2">
+                        Наши преподаватели</p>
                 </div>
             </div>
         </div>
@@ -20,7 +56,8 @@
         <div class="container">
             <div class="fw-pt-40 fw-pb-40 fw-text-center fw-pr-15 fw-pl-15">
                 <div class="fw-max-width-760 fw-inline-block">
-                    <p class="fw-font-roboto fw-font-medium fw-fz-24 fw-color-black">Профессионалы, с которыми вы станете еще успешнее</p>
+                    <p class="fw-font-roboto fw-font-medium fw-fz-24 fw-color-black">Профессионалы, с которыми вы
+                        станете еще успешнее</p>
                 </div>
             </div>
             <div class="fw-grid fw-grid-15">
@@ -31,7 +68,8 @@
                             <div class="fw-grid fw-grid-bottom fw-height-1-1">
                                 <div class="fw-width-1-1 fw-width-1-2@m fw-height-1-1@m">
                                     <div class="p-service--teacher__left">
-                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Стаж преподавания: 5 лет</p>
+                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Стаж преподавания: 5
+                                            лет</p>
                                         <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Образование: Диплом
                                             о высшем лингвистическом
                                             образовании АФО
@@ -40,9 +78,12 @@
                                 </div>
                                 <div class="fw-width-1-1 fw-width-1-2@m fw-height-1-1@m">
                                     <div class="p-service--teacher__right">
-                                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20 fw-flex fw-flex-middle">Геннадий <i class="icon icon-flag-russia fw-ml-5"></i></p>
-                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2 fw-mb-15">Разговорный английский, TOEFL</p>
-                                        <a href="#" class="button button-yellow button-arrow">Записаться на бесплатный вебинар</a>
+                                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20 fw-flex fw-flex-middle">
+                                            Геннадий <i class="icon icon-flag-russia fw-ml-5"></i></p>
+                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2 fw-mb-15">Разговорный
+                                            английский, TOEFL</p>
+                                        <a href="#" class="button button-yellow button-arrow">Записаться на бесплатный
+                                            вебинар</a>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +97,8 @@
                             <div class="fw-grid fw-grid-bottom fw-height-1-1">
                                 <div class="fw-width-1-1 fw-width-1-2@m fw-height-1-1@m">
                                     <div class="p-service--teacher__left">
-                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Стаж преподавания: 5 лет</p>
+                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Стаж преподавания: 5
+                                            лет</p>
                                         <p class="fw-fz-15 fw-color-white fw-line-height-1-2">Образование: Диплом
                                             о высшем лингвистическом
                                             образовании АФО
@@ -65,9 +107,12 @@
                                 </div>
                                 <div class="fw-width-1-1 fw-width-1-2@m fw-height-1-1@m">
                                     <div class="p-service--teacher__right">
-                                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20 fw-flex fw-flex-middle">Ольга <i class="icon icon-flag-usa fw-ml-5"></i></p>
-                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2 fw-mb-15">Разговорный английский, TOEFL</p>
-                                        <a href="#" class="button button-yellow button-arrow">Записаться на бесплатный вебинар</a>
+                                        <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-color-white fw-fz-18 fw-mb-20 fw-flex fw-flex-middle">
+                                            Ольга <i class="icon icon-flag-usa fw-ml-5"></i></p>
+                                        <p class="fw-fz-15 fw-color-white fw-line-height-1-2 fw-mb-15">Разговорный
+                                            английский, TOEFL</p>
+                                        <a href="#" class="button button-yellow button-arrow">Записаться на бесплатный
+                                            вебинар</a>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +128,8 @@
         <div class="container">
             <div class="s-school-facts__box">
                 <ul class="l-checkmark">
-                    <li><p>Все наши преподаватели имеют дипломы и сертификаты, подтверждающие их высокий уровень, – мы отбираем лучших</p></li>
+                    <li><p>Все наши преподаватели имеют дипломы и сертификаты, подтверждающие их высокий уровень, – мы
+                            отбираем лучших</p></li>
                     <li><p>Они жили или живут за рубежом и практикуют навык разговорного языка с носителями</p></li>
                     <li><p>Они в совершенстве владеют методикой быстрого и эффективного обучения</p></li>
                     <li><p>Наши преподаватели настроены на позитивное общение и всегда готовы помочь ученикам</p></li>

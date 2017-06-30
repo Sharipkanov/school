@@ -1,29 +1,29 @@
 <ul class="navigation">
-    <li class="navigation__item navigation__item--active"><a href="index.html" class="navigation__link"><span>ГЛАВНАЯ</span></a></li>
-    <li class="navigation__item navigation__item--sub">
+    <li class="navigation__item {% if page == 'index' %}navigation__item--active{% endif %}"><a href="index.html" class="navigation__link"><span>ГЛАВНАЯ</span></a></li>
+    <li class="navigation__item navigation__item--sub {% if page == 'teachers' or page == 'blog' or page == 'reviews' or page == 'schedule' %} navigation__item--active{% endif %}">
         <a href="#" class="navigation__link"><span>О ШКОЛЕ</span></a>
         <ul class="navigation__sub">
             <li class="navigation__item navigation__item--back"><a href="#" class="navigation__link"><span>Назад</span></a></li>
-            <li class="navigation__item navigation__item--header"><a href="#" class="navigation__link"><span>О ШКОЛЕ</span></a></li>
-            <li class="navigation__item"><a href="teachers.html" class="navigation__link"><span>Наши преподаватели</span></a></li>
-            <li class="navigation__item"><a href="blog.html" class="navigation__link"><span>Блог</span></a></li>
-            <li class="navigation__item"><a href="reviews.html" class="navigation__link"><span>Отзывы</span></a></li>
-            <li class="navigation__item"><a href="schedule.html" class="navigation__link"><span>Расписание</span></a></li>
+            <li class="navigation__item navigation__item--header"><a href="about-school.html" class="navigation__link"><span>О ШКОЛЕ</span></a></li>
+            <li class="navigation__item {% if page == 'teachers' %}navigation__item--active{% endif %}"><a href="teachers.html" class="navigation__link"><span>Наши преподаватели</span></a></li>
+            <li class="navigation__item {% if page == 'blog' %}navigation__item--active{% endif %}"><a href="blog.html" class="navigation__link"><span>Блог</span></a></li>
+            <li class="navigation__item {% if page == 'reviews' %}navigation__item--active{% endif %}"><a href="reviews.html" class="navigation__link"><span>Отзывы</span></a></li>
+            <li class="navigation__item {% if page == 'schedule' %}navigation__item--active{% endif %}"><a href="schedule.html" class="navigation__link"><span>Расписание</span></a></li>
         </ul>
     </li>
-    <li class="navigation__item navigation__item--sub">
+    <li class="navigation__item navigation__item--sub {% if page == 'conversational-english' or page == 'school-for-tourists' or page == 'individual-courses' or page == 'best-teacher' or page == 'business-english' %} navigation__item--active{% endif %}">
         <a href="#" class="navigation__link"><span>КУРСЫ</span></a>
         <ul class="navigation__sub">
             <li class="navigation__item navigation__item--back"><a href="#" class="navigation__link"><span>Назад</span></a></li>
             <li class="navigation__item navigation__item--header"><a href="#" class="navigation__link"><span>КУРСЫ</span></a></li>
-            <li class="navigation__item"><a href="conversational-english.html" class="navigation__link"><span>Разговорный английский</span></a></li>
-            <li class="navigation__item"><a href="school-for-tourists.html" class="navigation__link"><span>Английский для туристов</span></a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link"><span>VIP-обучение</span></a></li>
-            <li class="navigation__item"><a href="individual-courses.html" class="navigation__link"><span>Индивидуальное обучение</span></a></li>
-            <li class="navigation__item"><a href="best-teacher.html" class="navigation__link"><span>Ведущий преподаватель</span></a></li>
-            <li class="navigation__item"><a href="business-english.html" class="navigation__link"><span>Деловой английский</span></a></li>
+            <li class="navigation__item {% if page == 'conversational-english' %}navigation__item--active{% endif %}"><a href="conversational-english.html" class="navigation__link"><span>Разговорный английский</span></a></li>
+            <li class="navigation__item {% if page == 'school-for-tourists' %}navigation__item--active{% endif %}"><a href="school-for-tourists.html" class="navigation__link"><span>Английский для туристов</span></a></li>
+            <li class="navigation__item {% if page == 'vip' %}navigation__item--active{% endif %}"><a href="#" class="navigation__link"><span>VIP-обучение</span></a></li>
+            <li class="navigation__item {% if page == 'individual-courses' %}navigation__item--active{% endif %}"><a href="individual-courses.html" class="navigation__link"><span>Индивидуальное обучение</span></a></li>
+            <li class="navigation__item {% if page == 'best-teacher' %}navigation__item--active{% endif %}"><a href="best-teacher.html" class="navigation__link"><span>Ведущий преподаватель</span></a></li>
+            <li class="navigation__item {% if page == 'business-english' %}navigation__item--active{% endif %}"><a href="business-english.html" class="navigation__link"><span>Деловой английский</span></a></li>
         </ul>
     </li>
-    <li class="navigation__item"><a href="shop.html" class="navigation__link"><span>МАГАЗИН</span></a></li>
-    <li class="navigation__item"><a href="#" class="navigation__link"><span>КОНТАКТЫ</span></a></li>
+    <li class="navigation__item {% if page == 'shop' %}navigation__item--active{% endif %}"><a href="shop.html" class="navigation__link"><span>МАГАЗИН</span></a></li>
+    <li class="navigation__item {% if page == 'contacts' %}navigation__item--active{% endif %}"><a href="#" class="navigation__link"><span>КОНТАКТЫ</span></a></li>
 </ul>
