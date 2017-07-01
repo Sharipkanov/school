@@ -14,6 +14,7 @@ const gulp = require('gulp'),
     callback = require('gulp-callback'),
     clean = require('gulp-clean'),
     spritesmith = require("gulp.spritesmith"),
+    uncss = require('gulp-uncss'),
     browserSync = require('browser-sync');
 
 /* PRODUCTION PLUGINS ----------------------------------------------------------
@@ -188,6 +189,15 @@ gulp.task('sftp', function () {
             pass: "",
             remotePath: ""
         }));
+});
+
+/* CLEAN CSS ----------------------------------------------------------------- */
+gulp.task('clean_css', function () {
+    return gulp.src('dist/css/common.css')
+        .pipe(uncss({
+            html: ['dist/*.html']
+        }))
+        .pipe(gulp.dest('dist/css/cleaned'));
 });
 
 /* CLEAN -------------------------------------------------------------------- */

@@ -221,6 +221,8 @@
             });
 
             plugin.closePopupEl.on('click', function (e) {
+                e.preventDefault();
+
                 var pop = void 0;
                 if (this.hasAttribute('data-popup-target')) {
                     pop = $(this).attr('data-popup-target');
