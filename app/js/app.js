@@ -257,29 +257,19 @@
     YOURAPPNAME.prototype.parallax = function (selector) {
         var blocks = $(selector);
 
-        function getOffset() {
-            return parseInt($('.content').css('margin-left'));
-        }
-
         function renderOffset() {
+            var $scrollTop = $(window).scrollTop();
+
             blocks.each(function () {
                 var $this = $(this);
-                var $height = $this.outerHeight();
 
                 $this.css({
-                    left: $offset
-                }).addClass('parallax-active');
-
-                $this.next('[data-parallax-placeholder]').css({ height: $height });
-
-                console.log($this.next('[data-parallax-placeholder]'));
+                    'background-position': 'center ' + $scrollTop + 'px'
+                });
             });
         }
 
-        var $offset = getOffset();
-
-        $(window).resize(function () {
-            $offset = getOffset();
+        $(window).scroll(function () {
             renderOffset();
         });
 
