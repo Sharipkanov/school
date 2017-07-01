@@ -118,6 +118,22 @@
                         };
 
                     }(switcherElem, switcherTarget, parentNode, switcherTargets));
+
+                    switcherTrigger.addEventListener('mouseover', function (elem, target, parent, targets) {
+                        return function (e) {
+                            e.preventDefault();
+
+                            if (!elem.classList.contains('active')) {
+                                for (let z = 0; z < elem.parentNode.children.length; z++) {
+                                    elem.parentNode.children[z].classList.remove('active');
+                                    targets[z].classList.remove('active');
+                                }
+                                elem.classList.add('active');
+                                target.classList.add('active');
+                            }
+                        };
+
+                    }(switcherElem, switcherTarget, parentNode, switcherTargets));
                 }
 
                 if (switchersActive.length === switcherElems.length) {

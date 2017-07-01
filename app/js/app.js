@@ -118,6 +118,21 @@
                             }
                         };
                     }(switcherElem, switcherTarget, parentNode, switcherTargets));
+
+                    switcherTrigger.addEventListener('mouseover', function (elem, target, parent, targets) {
+                        return function (e) {
+                            e.preventDefault();
+
+                            if (!elem.classList.contains('active')) {
+                                for (var _z2 = 0; _z2 < elem.parentNode.children.length; _z2++) {
+                                    elem.parentNode.children[_z2].classList.remove('active');
+                                    targets[_z2].classList.remove('active');
+                                }
+                                elem.classList.add('active');
+                                target.classList.add('active');
+                            }
+                        };
+                    }(switcherElem, switcherTarget, parentNode, switcherTargets));
                 }
 
                 if (switchersActive.length === switcherElems.length) {

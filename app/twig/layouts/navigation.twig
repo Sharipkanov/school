@@ -1,10 +1,11 @@
 <ul class="navigation">
     <li class="navigation__item {% if page == 'index' %}navigation__item--active{% endif %}"><a href="index.html" class="navigation__link"><span>ГЛАВНАЯ</span></a></li>
-    <li class="navigation__item navigation__item--sub {% if page == 'teachers' or page == 'blog' or page == 'reviews' or page == 'schedule' %} navigation__item--active{% endif %}">
+    <li class="navigation__item navigation__item--sub {% if page == 'teachers' or page == 'about' or page == 'blog' or page == 'reviews' or page == 'schedule' %} navigation__item--active{% endif %}">
         <a href="#" class="navigation__link"><span>О ШКОЛЕ</span></a>
         <ul class="navigation__sub">
             <li class="navigation__item navigation__item--back"><a href="#" class="navigation__link"><span>Назад</span></a></li>
             <li class="navigation__item navigation__item--header"><a href="about-school.html" class="navigation__link"><span>О ШКОЛЕ</span></a></li>
+            <li class="navigation__item {% if page == 'about' %}navigation__item--active{% endif %}"><a href="about-school.html" class="navigation__link"><span>О нас</span></a></li>
             <li class="navigation__item {% if page == 'teachers' %}navigation__item--active{% endif %}"><a href="teachers.html" class="navigation__link"><span>Наши преподаватели</span></a></li>
             <li class="navigation__item {% if page == 'blog' %}navigation__item--active{% endif %}"><a href="blog.html" class="navigation__link"><span>Блог</span></a></li>
             <li class="navigation__item {% if page == 'reviews' %}navigation__item--active{% endif %}"><a href="reviews.html" class="navigation__link"><span>Отзывы</span></a></li>
