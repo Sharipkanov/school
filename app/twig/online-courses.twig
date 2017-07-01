@@ -10,7 +10,7 @@
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div>
-                    {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'Курсы', 'Онлайн-обучение']} %}
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'Курсы', url: '#'}, {title: 'Онлайн-обучение'}]} %}
                 </div>
                 <div class="fw-max-width-800">
                     <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-fz-18 fw-color-yellow fw-mt-35 fw-mb-25">
@@ -112,12 +112,9 @@
                                                                              class="button button-red">Записаться</a>
                         </div>
                     </div>
-                    <p class="fw-check-mark fw-mt-20">Расписание вебинарных занятий с преподавателем:
-                        понедельник, четверг с 20:00 до 20:30, суббота с 11.00 до 12.00
-                        (отсутствующим предоставляется запись).</p>
-                    <p class="fw-check-mark fw-mt-15">Регулярная разговорная практика по телефону</p>
-                    <p class="fw-check-mark fw-mt-15">Домашние задания в форме перевода: не больше 15 минут на
-                        каждое!</p>
+                    <p class="fw-check-mark fw-mt-20 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Расписание вебинарных занятий с преподавателем: понедельник, четверг с 20:00 до 20:30, суббота с 11.00 до 12.00 (отсутствующим предоставляется запись).</span></p>
+                    <p class="fw-check-mark fw-mt-15 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Регулярная разговорная практика по телефону</span></p>
+                    <p class="fw-check-mark fw-mt-15 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Домашние задания в форме перевода: не больше 15 минут на каждое!</span></p>
                 </div>
             </div>
         </div>
@@ -157,15 +154,13 @@
                 <p class="fw-fz-24 fw-font-medium fw-text-center">Курс английского для туристов для тех</p>
                 <div class="fw-grid fw-grid-20 fw-grid-40@m">
                     <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-3@l fw-mt-30">
-                        <p class="fw-check-mark">Кто никогда не учил английский, но хочет чувствовать себя уверенно в
-                            путешествии</p>
+                        <p class="fw-check-mark fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Кто никогда не учил английский, но хочет чувствовать себя уверенно в путешествии</span></p>
                     </div>
                     <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-3@l fw-mt-30">
-                        <p class="fw-check-mark">У кого нет времени на традиционные курсы, но есть желание получить
-                            конкретные знания для конкретной поездки</p>
+                        <p class="fw-check-mark fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">У кого нет времени на традиционные курсы, но есть желание получить конкретные знания для конкретной поездки</span></p>
                     </div>
                     <div class="fw-width-1-1 fw-width-1-3@l fw-mt-30 fw-text-center">
-                        <p class="fw-check-mark">Кому нужно срочно освежить знания перед отпуском</p>
+                        <p class="fw-check-mark fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Кому нужно срочно освежить знания перед отпуском</span></p>
                     </div>
                 </div>
             </div>
@@ -181,13 +176,10 @@
                 <div class="fw-flex-shrink-5 fw-flex-grow-1 fw-mt-30 fw-mt-0@m">
                     <p class="fw-font-medium fw-fz-24 fw-text-uppercase fw-mt-30 fw-mt-40@m fw-line-height-1-2 fw-mb-20 fw-mb-30@m">
                         Индивидуальное обучение - самый короткий путь к отличному знанию языка для тех</p>
-                    <p class="fw-check-mark fw-mt-20">Кто хочет изучить тему, не вписывающуюся в рамки стандартных
-                        курсов</p>
-                    <p class="fw-check-mark fw-mt-20">Кто не может подстроить свой график под расписание
-                        онлайн-занятий</p>
-                    <p class="fw-check-mark fw-mt-20">Кому требуется особая подача материала</p>
-                    <p class="fw-check-mark fw-mt-20">Кто хочет проработать «слабые» и закрепить «сильные» места за
-                        ограниченное время</p>
+                    <p class="fw-check-mark fw-mt-20 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Кто хочет изучить тему, не вписывающуюся в рамки стандартных курсов</span></p>
+                    <p class="fw-check-mark fw-mt-20 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Кто не может подстроить свой график под расписание онлайн-занятий</span></p>
+                    <p class="fw-check-mark fw-mt-20 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Кому требуется особая подача материала</span></p>
+                    <p class="fw-check-mark fw-mt-20 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Кто хочет проработать «слабые» и закрепить «сильные» места за ограниченное время</span></p>
                 </div>
             </div>
         </div>
@@ -309,14 +301,10 @@
                                 индивидуального изучения языка</p>
                         </div>
                     </div>
-                    <p class="fw-check-mark fw-mt-20">Все уроки строятся в соответствии со спецификой Вашего
-                        восприятия</p>
-                    <p class="fw-check-mark fw-mt-15">Вы получаете в 2 раза больше разговорной практики </p>
-                    <p class="fw-check-mark fw-mt-15">Вы можете возвращаться к любому сложному для Вас моменту сколько
-                        угодно раз</p>
-                    <p class="fw-check-mark fw-mt-15">Вы выполняете индивидуальное домашнее задание, составляемое с
-                        учетом
-                        Ваших успехов</p>
+                    <p class="fw-check-mark fw-mt-20 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Все уроки строятся в соответствии со спецификой Вашего восприятия</span></p>
+                    <p class="fw-check-mark fw-mt-15 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Вы получаете в 2 раза больше разговорной практики </span></p>
+                    <p class="fw-check-mark fw-mt-15 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Вы можете возвращаться к любому сложному для Вас моменту сколько угодно раз</span></p>
+                    <p class="fw-check-mark fw-mt-15 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Вы выполняете индивидуальное домашнее задание, составляемое с учетом Ваших успехов</span></p>
                 </div>
             </div>
         </div>

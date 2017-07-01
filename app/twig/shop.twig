@@ -9,7 +9,7 @@
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div>
-                    {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'Магазин']} %}
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'Магазин'}]} %}
                 </div>
                 <div class="fw-max-width-600">
                     <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-44@m fw-line-height-1-2 fw-mt-35">Мы сделали
@@ -182,11 +182,11 @@
                         <form class="fw-grid fw-grid-15">
                             <div class="fw-width-1-1 fw-width-2-5@m">
                                 <input type="text" placeholder="Телефон"
-                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-grey fw-fz-15 fw-font-roboto">
+                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-black fw-fz-15 fw-font-roboto">
                             </div>
                             <div class="fw-width-1-1 fw-width-2-5@m">
                                 <input type="text" placeholder="Имя"
-                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-grey fw-fz-15 fw-font-roboto">
+                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-black fw-fz-15 fw-font-roboto">
                             </div>
                             <div class="fw-width-1-1 fw-width-1-5@m">
                                 <button type="submit" class="button button-yellow">УЗНАТЬ</button>

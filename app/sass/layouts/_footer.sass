@@ -14,38 +14,38 @@
     justify-content: space-between
     flex-wrap: wrap
 
-    > div
-      flex-grow: 1
-      margin-top: 35px
-      flex-shrink: 2
-
-      &:last-child
-        flex-grow: 0
-        flex-basis: 130px
-
-      &:nth-last-child(2)
-        flex-shrink: 1
-
-      @media screen and (max-width: 1270px)
-        flex-shrink: 1
-
-        &:not(:last-child)
-          flex-basis: 50%
-          flex-shrink: 1
-
-        &:last-child
-          flex-basis: 100%
-
-      @media screen and (max-width: 570px)
-        margin-top: 25px
-        &:not(:last-child)
-          flex-basis: 100%
-
-        &:last-child
-          margin-bottom: 35px
-
-        + div
-          border-top: 1px solid #61605A
+    //> div
+    //  flex-grow: 1
+    //  margin-top: 35px
+    //  flex-shrink: 2
+    //
+    //  &:last-child
+    //    flex-grow: 0
+    //    flex-basis: 130px
+    //
+    //  &:nth-last-child(2)
+    //    flex-shrink: 1
+    //
+    //  @media screen and (max-width: 1270px)
+    //    flex-shrink: 1
+    //
+    //    &:not(:last-child)
+    //      flex-basis: 50%
+    //      flex-shrink: 1
+    //
+    //    &:last-child
+    //      flex-basis: 100%
+    //
+    //  @media screen and (max-width: 570px)
+    //    margin-top: 25px
+    //    &:not(:last-child)
+    //      flex-basis: 100%
+    //
+    //    &:last-child
+    //      margin-bottom: 35px
+    //
+    //    + div
+    //      border-top: 1px solid #61605A
 
   .footer__copyright
     font-size: 12px
@@ -60,6 +60,7 @@
 
     @media screen and (max-width: 570px)
       text-align: left
+      margin-top: 20px
       border-top: 1px solid #61605A
 
   .footer__list

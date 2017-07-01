@@ -9,13 +9,13 @@
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div>
-                    {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'Курсы', 'Разговорный английский']} %}
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'Курсы', url: '#'}, {title: 'Разговорный английский'}]} %}
                 </div>
                 <div class="fw-max-width-700">
                     <p class="fw-font-merriweather fw-font-bold fw-font-italic fw-fz-18 fw-color-yellow fw-mt-35 fw-mb-25">Разговорный английский</p>
                     <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-44@m fw-line-height-1-2">УЧИТЕСЬ ГОВОРИТЬ НА ИНОСТРАННОМ ЯЗЫКЕ ТАК, КАК ГОВОРЯТ ЕГО НОСИТЕЛИ</p>
                     <div class="fw-mt-30 fw-flex fw-flex-wrap fw-flex-middle">
-                        <div class="fw-mr-15"><a href="#" class="button button-red">Записаться</a></div>
+                        <div class="fw-mr-15"><a href="#" class="button button-red js-open-popup" data-popup-target="callback-popup">Записаться</a></div>
                     </div>
                 </div>
             </div>
@@ -25,37 +25,37 @@
 
 
     <div class="after-parallax-container">
-        <div class="fw-bg-color-white fw-pb-30">
+        <div class="fw-bg-color-white fw-pb-30 fw-pt-30">
             <div class="container">
                 <div class="fw-pl-25@m fw-pl-80@l">
-                    <div class="fw-flex fw-flex-middle fw-flex-wrap fw-flex-center">
-                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-mt-20">
-                            <div class="fw-flex fw-flex-column fw-flex-center fw-flex-middle fw-mr-20 fw-ml-20">
-                                <div><i class="icon icon-ruler"></i></div>
+                    <div class="fw-grid fw-grid-20">
+                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l">
+                            <div class="fw-flex fw-flex-column fw-flex-middle fw-width-1-1">
+                                <div class="fw-height-50"><i class="icon icon-ruler"></i></div>
                                 <div class="fw-mt-10">
                                     <p class="fw-fz-15 fw-text-center fw-line-height-1-5">Занятия <strong>от 150рублей</strong>. Дешевле, чем билет в кино!</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-mt-20">
-                            <div class="fw-flex fw-flex-column fw-flex-center fw-flex-middle fw-mr-20 fw-ml-20">
-                                <div><i class="icon icon-arrow-back"></i></div>
+                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l">
+                            <div class="fw-flex fw-flex-column fw-flex-middle fw-width-1-1">
+                                <div class="fw-height-50"><i class="icon icon-arrow-back"></i></div>
                                 <div class="fw-mt-10">
                                     <p class="fw-fz-15 fw-text-center fw-line-height-1-5"><strong>Вернем 150% стоимостикурса</strong>, если Вы не заговорите на английском</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-mt-20">
-                            <div class="fw-flex fw-flex-column fw-flex-center fw-flex-middle fw-mr-20 fw-ml-20">
-                                <div><i class="icon icon-chat"></i></div>
+                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l">
+                            <div class="fw-flex fw-flex-column fw-flex-middle fw-width-1-1">
+                                <div class="fw-height-50"><i class="icon icon-chat"></i></div>
                                 <div class="fw-mt-10">
-                                    <p class="fw-fz-15 fw-text-center fw-line-height-1-5">Наши преподаватели <strong> живутили жили за рубежом</strong> и регулярно общаются с носителями языка</p>
+                                    <p class="fw-fz-15 fw-text-center fw-line-height-1-5">Наши преподаватели <strong> живут или жили за рубежом</strong> и регулярно общаются с носителями языка</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l fw-mt-20">
-                            <div class="fw-flex fw-flex-column fw-flex-center fw-flex-middle fw-mr-20 fw-ml-20">
-                                <div><i class="icon icon-book"></i></div>
+                        <div class="fw-width-1-1 fw-width-1-2@m fw-width-1-4@l">
+                            <div class="fw-flex fw-flex-column fw-flex-middle fw-width-1-1">
+                                <div class="fw-height-50"><i class="icon icon-book"></i></div>
                                 <div class="fw-mt-10">
                                     <p class="fw-fz-15 fw-text-center fw-line-height-1-5">Уникальная методика быстрого запоминания <strong>5 000 базовых слов и фраз</strong></p>
                                 </div>
@@ -74,7 +74,7 @@
                         <div class="fw-mr-0 fw-mr-20@m fw-flex-shrink-1">
                             <p class="fw-fz-24 fw-font-medium fw-line-height-1-2">Новая группа курса «Деловой английский» стартует 11 мая 2017!</p>
                         </div>
-                        <div class="fw-flex-shrink-no fw-mt-15 fw-mt-0@m"><a href="#" class="button button-red">Записаться</a>
+                        <div class="fw-flex-shrink-no fw-mt-15 fw-mt-0@m"><a href="#" class="button button-red js-open-popup" data-popup-target="callback-popup">Записаться</a>
                         </div>
                     </div>
                     <p class="fw-check-mark fw-mt-20 fw-line-height-1-5"><span class="fw-mt-inverse-2 fw-block">Расписание вебинарных занятий с преподавателем: понедельник, четверг с 20:00 до 20:30, суббота с 11.00 до 12.00 (отсутствующим предоставляется запись).</span></p>
@@ -90,14 +90,14 @@
                 <div class="fw-flex fw-flex-wrap fw-flex-center fw-flex-right@m fw-mt-inverse-15">
                     <div class="fw-width-1-1 fw-width-420@m fw-pt-15">
                         <a href="#">
-                            <p class="fw-bg-cover fw-bg-center fw-bg-no-repeat fw-pt-20 fw-pb-20 fw-pl-20 fw-pr-20 fw-pt-40@m fw-pb-40@m fw-pl-80@m fw-pr-80@m"
+                            <p class="fw-bg-cover fw-bg-center fw-bg-no-repeat fw-pt-20 fw-pb-20 fw-pl-20 fw-pr-20 fw-pt-40@m fw-pb-40@m fw-pl-40@m fw-pr-40@m"
                                style="background-image: url(images/pages/individual-courses/panel-bg.jpg)">
-                                <span class="fw-font-roboto-condensed fw-font-bold fw-fz-24 fw-text-uppercase fw-color-white">Узнать свой <span class="fw-color-yellow">уровень английского</span></span>
+                                <span class="fw-font-roboto-condensed fw-font-bold fw-fz-24 fw-text-uppercase fw-color-white">Узнать <span class="fw-color-yellow">свой уровень</span> английского</span>
                             </p>
                         </a>
                     </div>
                     <div class="fw-width-1-1 fw-width-550@m fw-pl-0 fw-pl-15@l fw-pt-15">
-                        <div class="fw-bg-cover fw-bg-center fw-bg-no-repeat fw-pt-20 fw-pb-20 fw-pl-20 fw-pr-20 fw-pt-40@m fw-pb-40@m fw-pl-80@m fw-pr-80@m"
+                        <div class="fw-bg-cover fw-bg-center fw-bg-no-repeat fw-pt-20 fw-pb-20 fw-pl-20 fw-pr-20 fw-pt-40@m fw-pb-40@m fw-pl-40@m fw-pr-40@m"
                              style="background-image: url(images/pages/individual-courses/panel-bg-2.jpg)">
                             <div class="fw-flex fw-flex-wrap fw-flex-wrap-no@m fw-mt-inverse-15">
                                 <div class="fw-width-1-1 fw-flex-shrink-1 fw-mt-15">
@@ -105,7 +105,7 @@
                                         Бесплатный урок английского языка</p>
                                 </div>
                                 <div class="fw-flex-shrink-no fw-mt-15">
-                                    <a href="#" class="button button-yellow">ЗАПИСАТЬСЯ</a>
+                                    <a href="#" class="button button-yellow js-open-popup" data-popup-target="callback-sale">ЗАПИСАТЬСЯ</a>
                                 </div>
                             </div>
                         </div>
@@ -279,21 +279,17 @@
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p class="fw-flex-grow-1">Основатель онлайн-школы «Школа Веры Горпинич», выпускниками
-                                    которой стали более 6 000 человек</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">Основатель онлайн-школы «Школа Веры Горпинич», выпускниками которой стали более 6 000 человек</span></p>
                             </div>
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p>Несколько лет жила за границей, имеет большой опыт общения с носителями языка,
-                                    регулярно практикуется с англоязычными друзьями, чтобы быть в курсе его динамики.
-                                    Автор курсов быстрого и эффективного изучения разговорного английского, делового
-                                    английского, английского для туристов</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">Несколько лет жила за границей, имеет большой опыт общения с носителями языка, регулярно практикуется с англоязычными друзьями, чтобы быть в курсе его динамики. Автор курсов быстрого и эффективного изучения разговорного английского, делового английского, английского для туристов</span></p>
                             </div>
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p>Регулярно проводит бесплатные семинары, которые посетили более 50 000 человек</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">Регулярно проводит бесплатные семинары, которые посетили более 50 000 человек</span></p>
                             </div>
                         </div>
                         <div class="s-vg-courses__media s-vg-courses__media--frame">
@@ -480,15 +476,15 @@
                             </div>
                             <div class="fw-width-1-1 fw-width-1-1@m fw-width-1-4@l">
                                 <input type="text" placeholder="Ваше имя"
-                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-grey fw-fz-15 fw-font-roboto">
+                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-black fw-fz-15 fw-font-roboto">
                             </div>
                             <div class="fw-width-1-1 fw-width-1-1@m fw-width-1-4@l">
                                 <input type="text" placeholder="Телефон"
-                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-grey fw-fz-15 fw-font-roboto">
+                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-black fw-fz-15 fw-font-roboto">
                             </div>
                             <div class="fw-width-1-1 fw-width-1-1s@m fw-width-1-4@l">
                                 <input type="text" placeholder="E-mail"
-                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-grey fw-fz-15 fw-font-roboto">
+                                       class="fw-width-1-1 fw-border-box fw-height-50 fw-pl-15 fw-pr-15 fw-color-black fw-fz-15 fw-font-roboto">
                             </div>
                         </div>
                     </div>

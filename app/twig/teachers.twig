@@ -10,7 +10,7 @@
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div class="fw-mb-50">
-                    {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'О школе', 'Наши преподаватели']} %}
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'О школе', url: 'about-school.html'}, {title: 'Наши преподаватели'}]} %}
                 </div>
                 <div class="fw-max-width-700">
                     <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-54@m fw-line-height-1-2">
@@ -53,7 +53,7 @@
                                                 Геннадий <i class="icon icon-flag-russia fw-ml-5"></i></p>
                                             <p class="fw-fz-15 fw-color-white fw-line-height-1-2 fw-mb-15">Разговорный
                                                 английский, TOEFL</p>
-                                            <a href="#" class="button button-yellow button-arrow">Записаться на
+                                            <a href="#" class="button button-yellow button-arrow js-open-popup" data-popup-target="callback-sale">Записаться на
                                                 бесплатный
                                                 вебинар</a>
                                         </div>
@@ -83,7 +83,7 @@
                                                 Ольга <i class="icon icon-flag-usa fw-ml-5"></i></p>
                                             <p class="fw-fz-15 fw-color-white fw-line-height-1-2 fw-mb-15">Разговорный
                                                 английский, TOEFL</p>
-                                            <a href="#" class="button button-yellow button-arrow">Записаться на
+                                            <a href="#" class="button button-yellow button-arrow js-open-popup" data-popup-target="callback-sale">Записаться на
                                                 бесплатный
                                                 вебинар</a>
                                         </div>

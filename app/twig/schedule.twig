@@ -9,7 +9,7 @@
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div>
-                    {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'Расписание']} %}
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'Расписание'}]} %}
                 </div>
                 <div class="fw-max-width-600">
                     <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-44@m fw-line-height-1-2 fw-mt-35">Расписание
@@ -41,7 +41,7 @@
                         <p class="fw-fz-14 fw-color-white fw-mt-20">Занятия из любого удобного места</p>
                         <div class="fw-mt-auto fw-flex fw-flex-space-between">
                             <div><a href="#" class="fw-font-medium fw-fz-16 fw-color-yellow">Подробнее</a></div>
-                            <div><a href="#" class="button button-red fw-mr-inverse-20 button-arrow">Записаться</a>
+                            <div><a href="#" class="button button-red fw-mr-inverse-20 button-arrow js-open-popup" data-popup-target="callback-sale">Записаться</a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <p class="fw-fz-14 fw-color-white fw-mt-20">Занятия из любого удобного места</p>
                         <div class="fw-mt-auto fw-flex fw-flex-space-between">
                             <div><a href="#" class="fw-font-medium fw-fz-16 fw-color-yellow">Подробнее</a></div>
-                            <div><a href="#" class="button button-red fw-mr-inverse-20 button-arrow ">Записаться</a>
+                            <div><a href="#" class="button button-red fw-mr-inverse-20 button-arrow js-open-popup" data-popup-target="callback-sale">Записаться</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                         <p class="fw-fz-14 fw-color-white fw-mt-20">Занятия из любого удобного места</p>
                         <div class="fw-mt-auto fw-flex fw-flex-space-between">
                             <div><a href="#" class="fw-font-medium fw-fz-16 fw-color-yellow">Подробнее</a></div>
-                            <div><a href="#" class="button button-red fw-mr-inverse-20 button-arrow">Записаться</a>
+                            <div><a href="#" class="button button-red fw-mr-inverse-20 button-arrow js-open-popup" data-popup-target="callback-sale">Записаться</a>
                             </div>
                         </div>
                     </div>

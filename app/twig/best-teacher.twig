@@ -9,7 +9,7 @@
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div class="fw-mb-50">
-                    {% include 'components/l-breadcrumbs.twig' with {items: ['Главная', 'Курсы', 'Ведущий преподаватель']} %}
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'Курсы', url: '#'}, {title: 'Ведущий преподаватель'}]} %}
                 </div>
                 <div class="fw-max-width-700">
                     <p class="fw-font-roboto-condensed fw-font-bold fw-color-white fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-54@m fw-line-height-1-2">Ведущий преподаватель</p>
@@ -36,8 +36,7 @@
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p class="fw-flex-grow-1">Ленинградский Государственный Университет им А.С. Пушкина
-                                    (красный диплом)</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">Ленинградский Государственный Университет им А.С. Пушкина (красный диплом)</span></p>
                             </div>
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
@@ -47,24 +46,22 @@
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p>Стажировки в Берлине, Мюнхене, Ландсхуте, Лондоне</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">Стажировки в Берлине, Мюнхене, Ландсхуте, Лондоне</span></p>
                             </div>
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p>Практика преподавания в качестве учителя английского и немецкого языков в средней
-                                    школе, ставшая мощным толчком в принятии решения открыть собственную школу</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">Практика преподавания в качестве учителя английского и немецкого языков в средней школе, ставшая мощным толчком в принятии решения открыть собственную школу</span></p>
                             </div>
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p>15-тилетний опыт частных уроков для школьников и студентов ВУЗов, взрослых людей,
-                                    обучение руководителей и работников компаний Москвы и Санкт-Петербурга</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">15-тилетний опыт частных уроков для школьников и студентов ВУЗов, взрослых людей, обучение руководителей и работников компаний Москвы и Санкт-Петербурга</span></p>
                             </div>
                             <div class="fw-flex fw-mt-30">
                                 <div class="fw-flex-shrink-no fw-mr-15"><img src="images/icons/icon.medal.png" alt="">
                                 </div>
-                                <p>Участие в политических семинарах в Берлине</p>
+                                <p class="fw-flex-grow-1 fw-line-height-1-5"><span class="fw-mt-inverse-5 fw-block">Участие в политических семинарах в Берлине</span></p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +126,7 @@
             <div class="container">
                 <div class="s-ask-question__box">
                     <p>Бесплатный урок английского языка</p>
-                    <button class="button button-yellow">ЗАПИСАТЬСЯ</button>
+                    <a href="#" class="button button-yellow js-open-popup" data-popup-target="callback-popup">ЗАПИСАТЬСЯ</a>
                 </div>
             </div>
         </div>
