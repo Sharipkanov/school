@@ -283,7 +283,7 @@
 
                 if ($this.next('[data-parallax-placeholder]').length < 1) {
                     const $bg = $this.css('background-image');
-                    $this.css('background', 'transparent');
+                    $this.removeAttr('style').addClass('parallax-gradient');
                     const $placeholder = $('<div data-parallax-placeholder></div>');
                     $placeholder.css({
                         'background-image': $bg
