@@ -439,7 +439,7 @@
         });
     });
 
-    $('.header__toggle > a').click(function (e) {
+    $('.header__toggle > a.toggle-header').click(function (e) {
         e.preventDefault();
 
         const $trigger = $(this);

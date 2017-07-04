@@ -1,15 +1,20 @@
 .header
 
   .header__toggle
-    padding: 15px
+    width: 50px
+    text-align: center
+    padding: 15px 0
+    box-sizing: border-box
     display: none
     position: fixed
     left: 0
     top: 0
     height: 100%
-    width: auto
     background-color: $colorYellow
     z-index: 56
+
+    > a:last-child
+      display: none
 
     @media screen and (max-width: 959px)
       display: block
@@ -19,6 +24,14 @@
       left: 0
       width: 100%
       height: auto
+      text-align: left
+      display: flex
+      padding: 15px
+      justify-content: space-between
+
+      > a:last-child
+        display: block
+
 
   .header__content
     position: fixed
