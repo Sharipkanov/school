@@ -170,7 +170,7 @@ a
     margin-bottom: 30px
 
 [data-parallax]
-  background-position: center 0
+  background-position: center center
   &.parallax-active
     position: fixed
     left: 0
@@ -184,6 +184,8 @@ a
   background-color: #ebebeb
   position: relative
   z-index: 2
+  padding-bottom: 20px
+  margin-bottom: 0 !important
 
 .blog-article__content
   p:not(:last-child)
@@ -216,3 +218,16 @@ a
 
 #map
   margin-bottom: 0
+
+[data-parallax]
+  position: relative
+  z-index: 2
+
+[data-parallax-placeholder]
+  position: fixed
+  top: 0
+  right: 0
+  height: 100px
+  background-size: cover
+  z-index: 1
+  background-position: center center

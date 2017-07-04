@@ -272,22 +272,44 @@
     YOURAPPNAME.prototype.parallax = function (selector) {
         var blocks = $(selector);
 
+        function renderTemplate($blocks) {
+            $blocks.each(function () {
+                var $this = $(this);
+
+                if ($this.next('[data-parallax-placeholder]').length < 1) {
+                    var $bg = $this.css('background-image');
+                    $this.css('background', 'transparent');
+                    var $placeholder = $('<div data-parallax-placeholder></div>');
+                    $placeholder.css({
+                        'background-image': $bg
+                    });
+                    $this.before($placeholder);
+                }
+            });
+        }
+
         function renderOffset() {
             var $scrollTop = $(window).scrollTop();
 
             blocks.each(function () {
                 var $this = $(this);
+                var $content = $('.content');
+                var $mt = $content.css('margin-top');
+                var $ml = $content.css('margin-left');
 
-                $this.css({
-                    'background-position': 'center ' + $scrollTop + 'px'
+                $this.prev('[data-parallax-placeholder]').css({
+                    height: $this.outerHeight(),
+                    top: $mt,
+                    left: $ml
                 });
             });
         }
 
-        $(window).scroll(function () {
+        $(window).resize(function () {
             renderOffset();
         });
 
+        renderTemplate(blocks);
         renderOffset();
     };
 
