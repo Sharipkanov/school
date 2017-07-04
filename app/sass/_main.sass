@@ -169,17 +169,6 @@ a
     text-align: center
     margin-bottom: 30px
 
-[data-parallax]
-  background-position: center center
-  &.parallax-active
-    position: fixed
-    left: 0
-    right: 0
-    top: 0
-
-    @media screen and (max-width: 767px)
-      top: 46px
-
 .after-parallax-container
   background-color: #ebebeb
   position: relative
@@ -222,6 +211,7 @@ a
 [data-parallax]
   position: relative
   z-index: 2
+  background-position: center center
 
 [data-parallax-placeholder]
   position: fixed
