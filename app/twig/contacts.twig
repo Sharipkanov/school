@@ -1,0 +1,76 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Контакты{% endblock %}
+
+{% set page = 'contacts' %}
+
+{% block scripts %}
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+
+    <script type="text/javascript">
+        var map,
+            myIcon;
+
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [59.850142, 30.303066],
+                zoom: 16
+            });
+
+            myIcon = DG.icon({
+                iconUrl: window.location.origin + '/images/logo.svg',
+                iconSize: [55, 55]
+            });
+
+            DG.marker([59.850142, 30.303066], {
+                icon: myIcon
+            }).addTo(map);
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="fw-pt-40 fw-pt-80@l fw-pb-40 fw-pb-80@l fw-bg-color-grey-lighter">
+        <div class="container">
+            <div class="fw-pl-25@m fw-pl-80@l">
+                <div class="fw-mb-30">
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'О школе', url: 'about-school.html'}, {title: 'Контакты'}], type: 'dark'} %}
+                </div>
+                <div class="fw-mt-20">
+                    <p class="fw-font-roboto-condensed fw-font-bold fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-54@m fw-line-height-1-2">Контакты</p>
+                </div>
+                <div class="contacts-grid fw-mt-40 fw-mt-60@l">
+                    <div class="fw-flex fw-flex-top">
+                        <div class="fw-flex-shrink-no fw-mr-15"><i class="fa fa-map-marker fw-fz-44 fw-color-blue"></i></div>
+                        <div class="fw-flex-grow-1">
+                            <p class="fw-font-bold fw-fz-24 fw-line-height-1-2">Чернышевская <br>ул. Таврическая, д. 2</p>
+                            <p class="fw-mt-10 fw-fz-16">пн-пт с 10:00 до 21:00, сб-вс с 11:00 до 19:00</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fw-flex fw-flex-middle">
+                            <div class="fw-flex-shrink-no fw-mr-15"><i class="fa fa-phone fw-fz-26 fw-color-yellow"></i></div>
+                            <div class="fw-flex-grow-1">
+                                <a href="tel:+7 (812) 364-43-53"><p class="fw-font-bold fw-fz-24 fw-line-height-1-2 fw-color-black">+7 (812) 364-43-53</p></a>
+                            </div>
+                        </div>
+                        <div class="fw-flex fw-flex-middle fw-mt-10">
+                            <div class="fw-flex-shrink-no fw-mr-15"><i class="fa fa-envelope fw-fz-22 fw-color-green"></i></div>
+                            <div class="fw-flex-grow-1">
+                                <a href="mailto:info@-advance-club.ru"><p class="fw-font-bold fw-fz-24 fw-line-height-1-2 fw-color-black fw-text-underline">info@-advance-club.ru</p></a>
+                            </div>
+                        </div>
+                        <div class="fw-flex fw-flex-middle fw-mt-12">
+                            <div class="fw-flex-shrink-no fw-mr-15"><i class="fa fa-skype fw-fz-26 fw-color-blue-light"></i></div>
+                            <div class="fw-flex-grow-1">
+                                <p class="fw-font-bold fw-fz-24 fw-line-height-1-2 fw-color-black fw-mt-inverse-2">advanceclub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="fw-width-1-1 fw-height-1-1 fw-bg-color-white"></div>
+{% endblock %}

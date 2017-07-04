@@ -1,4 +1,4 @@
-<ul class="l-breadcrumbs">
+<ul class="l-breadcrumbs{% if type == 'dark'  %} l-breadcrumbs-dark{% endif %}">
     {% for item in items %}
         {% if loop.index != items.length %}
             <li class="l-breadcrumbs__item"><a href="{{ item.url }}" class="l-breadcrumbs__link">{{ item.title }}</a></li>

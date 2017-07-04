@@ -33,3 +33,11 @@
 
   .l-breadcrumbs__link
     text-decoration: underline
+
+  &.l-breadcrumbs-dark
+    .l-breadcrumbs__item:not(:first-child)::before
+      border-color: #5d5d5d
+
+    .l-breadcrumbs__text,
+    .l-breadcrumbs__link
+      color: #5d5d5d

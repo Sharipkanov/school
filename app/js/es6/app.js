@@ -293,7 +293,6 @@
             renderOffset();
         });
 
-
         renderOffset();
     };
 

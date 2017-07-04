@@ -33,6 +33,10 @@ a
   min-width: 0
   margin-left: 295px
 
+  > *
+    &:nth-last-child(2)
+      margin-bottom: 20px
+
   @media screen and (max-width: 959px)
     margin-left: 43px
 
@@ -184,3 +188,31 @@ a
 .blog-article__content
   p:not(:last-child)
     margin-bottom: 20px
+
+.contacts-grid
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  max-width: 870px
+
+  > div
+    width: 50%
+    box-sizing: border-box
+    padding: 0 0 0 60px
+
+    &:first-child
+      border-right: 1px dashed $colorGrey
+      padding: 0 60px 0 0
+
+    @media screen and (max-width: 767px)
+      width: 100%
+      padding: 0
+
+      &:first-child
+        border-right: none
+        border-bottom: 1px dashed $colorGrey
+        padding: 0 0 20px 0
+        margin: 0 0 20px 0
+
+#map
+  margin-bottom: 0
