@@ -345,6 +345,7 @@
         const $reviewsCarousel = $('#reviews-carousel');
         const $reviewsVkCarousel = $('#reviews-vk-carousel');
         const $reviewsVkThumbnailCarousel = $('#reviews-vk-thumbnail-carousel');
+        const $reviewVkCarousel = $('#review-vk-carousel');
 
         $whyUsCarousel.owlCarousel({
             loop: true,
@@ -397,6 +398,14 @@
             dots: false
         });
 
+        $reviewVkCarousel.owlCarousel({
+            loop: true,
+            nav: true,
+            items: 1,
+            margin: 0,
+            dots: false
+        });
+
         $reviewsCarousel.find('.owl-next').click(function (e) {
             e.preventDefault();
 
@@ -437,25 +446,33 @@
 
             $parentListItem.removeClass('navigation__item--active');
         });
-    });
 
-    $('.header__toggle > a.toggle-header').click(function (e) {
-        e.preventDefault();
+        $('.header__toggle > a.toggle-header').click(function (e) {
+            e.preventDefault();
 
-        const $trigger = $(this);
-        const $header = $trigger.closest('.header');
-        const headerActiveClass = 'header--active';
-        const $headerContent = $header.find('.header__content');
-        const headerContentActiveClass = 'header__content--active';
+            const $trigger = $(this);
+            const $header = $trigger.closest('.header');
+            const headerActiveClass = 'header--active';
+            const $headerContent = $header.find('.header__content');
+            const headerContentActiveClass = 'header__content--active';
 
-        if ($headerContent.hasClass(headerContentActiveClass)) {
-            $headerContent.removeClass(headerContentActiveClass);
-            $header.removeClass(headerActiveClass);
-            $(document.querySelector('html')).removeClass('menu-opened');
-        } else {
-            $headerContent.addClass(headerContentActiveClass);
-            $header.addClass(headerActiveClass);
-            $(document.querySelector('html')).addClass('menu-opened');
-        }
+            if ($headerContent.hasClass(headerContentActiveClass)) {
+                $headerContent.removeClass(headerContentActiveClass);
+                $header.removeClass(headerActiveClass);
+                $(document.querySelector('html')).removeClass('menu-opened');
+            } else {
+                $headerContent.addClass(headerContentActiveClass);
+                $header.addClass(headerActiveClass);
+                $(document.querySelector('html')).addClass('menu-opened');
+            }
+        });
+
+        $('.js-lightbox').click(function(e) {
+            e.preventDefault();
+
+            $reviewVkCarousel.trigger('to.owl.carousel', parseInt($(this).attr('href').replace('#', '')));
+
+            app.popups().openPopup('popup-lightbox');
+        });
     });
 })();

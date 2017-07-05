@@ -33,7 +33,7 @@
                     <p class="fw-font-light fw-fz-15 fw-color-black fw-mt-30 fw-line-height-1-2">Оставьте заявку, и мы перезвоним Вам, чтобы рассказать, как получить доступ к бесплатному вебинару!</p>
                 </div>
                 <div class="fw-width-1-1 fw-width-3-5@m">
-                    <form action="">
+                    <form action="" class="fw-width-1-1">
                         <div class="fw-flex fw-flex-column fw-flex-row@s fw-flex-middle@s">
                             <div class="fw-flex-shrink-no fw-mr-15@s fw-mb-15 fw-mb-0@s fw-width-70"><label class="fw-fz-13 fw-color-blue-dark">Ваше имя</label></div>
                             <div class="fw-flex-grow-1"><input type="text" class="fw-width-1-1 fw-height-38 fw-border-box fw-pl-20 fw-pr-20 fw-color-black"></div>
@@ -60,7 +60,7 @@
                     <p class="fw-font-light fw-fz-15 fw-color-black fw-mt-30 fw-line-height-1-2">Оставьте заявку, и мы перезвоним Вам, чтобы рассказать, как получить доступ к бесплатному вебинару!</p>
                 </div>
                 <div class="fw-width-1-1 fw-width-3-5@m">
-                    <form action="">
+                    <form action="" class="fw-width-1-1">
                         <div class="fw-flex fw-flex-column fw-flex-row@s fw-flex-middle@s">
                             <div class="fw-flex-shrink-no fw-mr-15@s fw-mb-15 fw-mb-0@s fw-width-70"><label class="fw-fz-13 fw-color-blue-dark">Ваше имя</label></div>
                             <div class="fw-flex-grow-1"><input type="text" class="fw-width-1-1 fw-height-38 fw-border-box fw-pl-20 fw-pr-20 fw-color-black"></div>
@@ -87,7 +87,7 @@
                     <p class="fw-font-light fw-fz-15 fw-color-black fw-mt-30 fw-line-height-1-2">Оставьте заявку, и мы перезвоним Вам, чтобы рассказать, как получить доступ к бесплатному вебинару!</p>
                 </div>
                 <div class="fw-width-1-1 fw-width-3-5@m">
-                    <form action="" class="fw-width-2-3@s">
+                    <form action="" class="fw-width-1-1 fw-width-2-3@s">
                         <div class="fw-flex fw-flex-column fw-flex-row@s fw-flex-middle@s">
                             <div class="fw-flex-shrink-no fw-mr-15@s fw-mb-15 fw-mb-0@s fw-width-70"><label class="fw-fz-13 fw-color-blue-dark">Ваше имя</label></div>
                             <div class="fw-flex-grow-1"><input type="text" class="fw-width-1-1 fw-height-38 fw-border-box fw-pl-5 fw-pr-5 fw-font-roboto fw-color-black"></div>
@@ -111,9 +111,11 @@
         </div>
     </div>
 
+    {% block popups %}{% endblock %}
+
+    {% include "scripts.twig" %}
     <!-- Scripts -->
     {% block scripts %}
     {% endblock %}
-    {% include "scripts.twig" %}
 </body>
 </html>

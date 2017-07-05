@@ -12,10 +12,14 @@
             myIcon;
 
         DG.then(function () {
+
             map = DG.map('map', {
                 center: [59.850578, 30.303804],
                 zoom: 16
             });
+
+            map.scrollWheelZoom.disable();
+            map.touchZoom.disable();
 
             myIcon = DG.icon({
                 iconUrl: window.location.origin + '/images/logo.svg',
@@ -34,7 +38,7 @@
         <div class="container">
             <div class="fw-pl-25@m fw-pl-80@l">
                 <div class="fw-mb-30">
-                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'О школе', url: 'about-school.html'}, {title: 'Контакты'}], type: 'dark'} %}
+                    {% include 'components/l-breadcrumbs.twig' with {items: [{title: 'Главная', url: 'index.html'}, {title: 'Контакты'}], type: 'dark'} %}
                 </div>
                 <div class="fw-mt-20">
                     <p class="fw-font-roboto-condensed fw-font-bold fw-text-uppercase fw-fz-24 fw-fz-32@s fw-fz-54@m fw-line-height-1-2">Контакты</p>
@@ -63,13 +67,13 @@
                         <div class="fw-flex fw-flex-middle fw-mt-10">
                             <div class="fw-flex-shrink-no fw-mr-15"><i class="fa fa-envelope fw-fz-22 fw-color-green"></i></div>
                             <div class="fw-flex-grow-1">
-                                <a href="mailto:info@-advance-club.ru"><p class="fw-font-bold fw-fz-24 fw-line-height-1-2 fw-color-black fw-text-underline">info@-advance-club.ru</p></a>
+                                <a href="mailto:info@-advance-club.ru"><p class="fw-font-bold fw-fz-24 fw-line-height-1-2 fw-color-black fw-text-underline">info@gorpinich-school.ru</p></a>
                             </div>
                         </div>
                         <div class="fw-flex fw-flex-middle fw-mt-12">
                             <div class="fw-flex-shrink-no fw-mr-15"><i class="fa fa-skype fw-fz-26 fw-color-blue-light"></i></div>
                             <div class="fw-flex-grow-1">
-                                <p class="fw-font-bold fw-fz-24 fw-line-height-1-2 fw-color-black fw-mt-inverse-2">advanceclub</p>
+                                <p class="fw-font-bold fw-fz-24 fw-line-height-1-2 fw-color-black fw-mt-inverse-2">gorpinichigor</p>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@
 
     <div class="after-parallax-container">
         <div class="s-school-facts s-school-facts--reverse">
-            <img src="images/s-school-facts-bg.jpg" alt="" class="s-school-facts__image">
+            <img src="images/pages/thumbnail-facts-5.jpg" alt="" class="s-school-facts__image">
             <div class="container">
                 <div class="s-school-facts__box">
                     <p class="fw-font-merriweather fw-font-light fw-font-italic fw-fz-15 fw-line-height-1-5">Цель нашей
@@ -45,7 +45,7 @@
                         <p class="fw-mt-20"><span class="fw-color-blue"><i class="icon icon-vk"></i>
                                 <span class="fw-ml-10">www.vk.com/smirnova30</span></span></p>
                     </div>
-                    <p class="fw-fz-15 fw-line-height-1-2 fw-mt-20 fw-mb-20">У меня два высших образования, поэтому я
+                    <p class="fw-fz-15 fw-line-height-1-5 fw-mt-20 fw-mb-20">У меня два высших образования, поэтому я
                         учила английский и в школе, и в двух университетах, почти 20 лет, но говорить так и не
                         научилась, считала, что у меня ужасное произношение. На курсы я пошла, когда решила в очередной
                         раз взяться за себя. Честно, думала, что брошу на середине, но с каждым занятием мне становилось
@@ -73,7 +73,7 @@
                         <p class="fw-mt-20"><span class="fw-color-blue"><i class="icon icon-vk"></i>
                                 <span class="fw-ml-10">www.vk.com/svetlanka</span></span></p>
                     </div>
-                    <p class="fw-fz-15 fw-line-height-1-2 fw-mt-20 fw-mb-20">У меня два высших образования, поэтому я
+                    <p class="fw-fz-15 fw-line-height-1-5 fw-mt-20 fw-mb-20">У меня два высших образования, поэтому я
                         учила английский и в школе, и в двух университетах, почти 20 лет, но говорить так и не
                         научилась, считала, что у меня ужасное произношение. На курсы я пошла, когда решила в очередной
                         раз взяться за себя. Честно, думала, что брошу на середине, но с каждым занятием мне становилось
@@ -82,7 +82,7 @@
             </div>
         </div>
 
-        <div class="container">
+        {#<div class="container">
             <div class="fw-pt-20 fw-pb-20 fw-pt-60@l fw-pb-60@l fw-bg-color-white fw-pr-20 fw-pl-20 fw-mt-15">
                 <p class="fw-fz-24 fw-line-height-1-2 fw-font-medium fw-mb-40 fw-mb-80@l">Другие истории успеха</p>
                 <div class="owl-carousel" id="reviews-vk-thumbnail-carousel">
@@ -154,7 +154,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>#}
 
         <div class="container">
             <div class="fw-pt-20 fw-pb-20 fw-pt-60@l fw-pb-60@l fw-bg-color-white fw-pr-20 fw-pl-20 fw-mt-15">
@@ -164,20 +164,30 @@
                     <div class="item">
                         <div class="fw-grid fw-grid-20 fw-grid-middle fw-border-bottom-1 fw-border-color-grey-light fw-border-style-solid fw-pb-20 fw-mb-20">
                             <div class="fw-width-1-1 fw-width-1-2@m fw-text-center">
-                                <img src="images/pages/reviews/screen.vk.jpg" alt="">
+                                <a href="#0" class="js-lightbox"><img src="images/pages/reviews/screen.vk.jpg" alt=""></a>
                             </div>
                             <div class="fw-width-1-1 fw-width-1-2@m fw-text-center">
-                                <img src="images/pages/reviews/screen.vk.1.jpg" alt="">
+                                <a href="#1" class="js-lightbox"><img src="images/pages/reviews/screen.vk.1.jpg" alt=""></a>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="fw-grid fw-grid-20 fw-grid-middle fw-border-bottom-1 fw-border-color-grey-light fw-border-style-solid fw-pb-20 fw-mb-20">
                             <div class="fw-width-1-1 fw-width-1-2@m fw-text-center">
-                                <img src="images/pages/reviews/screen.vk.jpg" alt="">
+                                <a href="#2" class="js-lightbox"><img src="images/pages/reviews/screen.vk.2.jpg" alt=""></a>
                             </div>
                             <div class="fw-width-1-1 fw-width-1-2@m fw-text-center">
-                                <img src="images/pages/reviews/screen.vk.1.jpg" alt="">
+                                <a href="#3" class="js-lightbox"><img src="images/pages/reviews/screen.vk.3.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="fw-grid fw-grid-20 fw-grid-middle fw-border-bottom-1 fw-border-color-grey-light fw-border-style-solid fw-pb-20 fw-mb-20">
+                            <div class="fw-width-1-1 fw-width-1-2@m fw-text-center">
+                                <a href="#4" class="js-lightbox"><img src="images/pages/reviews/screen.vk.4.jpg" alt=""></a>
+                            </div>
+                            <div class="fw-width-1-1 fw-width-1-2@m fw-text-center">
+                                <a href="#5" class="js-lightbox"><img src="images/pages/reviews/screen.vk.5.jpg" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -233,4 +243,44 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block popups %}
+    <div class="popup-wrapper js-popup" data-popup="popup-lightbox">
+        <div class="popup review-vk-popup">
+            <a href="#" class="popup__close js-close-popup"></a>
+            <div class="owl-carousel" id="review-vk-carousel">
+                <div class="item">
+                    <div class="fw-width-1-1 fw-text-center fw-flex fw-flex-middle fw-flex-center">
+                        <a href="#" class="js-lightbox"><img src="images/pages/reviews/screen.vk.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fw-width-1-1 fw-text-center fw-flex fw-flex-middle fw-flex-center">
+                        <a href="#" class="js-lightbox"><img src="images/pages/reviews/screen.vk.1.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fw-width-1-1 fw-text-center fw-flex fw-flex-middle fw-flex-center">
+                        <a href="#" class="js-lightbox"><img src="images/pages/reviews/screen.vk.2.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fw-width-1-1 fw-text-center fw-flex fw-flex-middle fw-flex-center">
+                        <a href="#" class="js-lightbox"><img src="images/pages/reviews/screen.vk.3.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fw-width-1-1 fw-text-center">
+                        <a href="#" class="js-lightbox"><img src="images/pages/reviews/screen.vk.4.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fw-width-1-1 fw-text-center">
+                        <a href="#" class="js-lightbox"><img src="images/pages/reviews/screen.vk.5.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
