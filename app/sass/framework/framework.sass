@@ -12,54 +12,56 @@
 @import "text"
 
 .fw-overflow-hidden
-  overflow: hidden
+	overflow: hidden
 
 .fw-img-cover
-  width: 100%
-  height: 100%
-  object-fit: cover
+	width: 100%
+	height: 100%
+	object-fit: cover
 
 @each $value in '1-2', '1-5', '1-7', '2'
-  .fw-line-height-#{$value}
-    line-height: unquote(str_replace($value, '-', '.'))
+	.fw-line-height-#{$value}
+		line-height: unquote(str_replace($value, '-', '.'))
 
 .fw-inline-block
-  display: inline-block
+	display: inline-block
 
 .fw-block
-  display: block
+	display: block
 
 .fw-inline
-  display: inline
+	display: inline
 
 .fw-check-mark
-  position: relative
-  //display: flex
-  display: block
-  padding-left: 25px
+	position: relative
+	//display: flex
+	display: block
+	padding-left: 25px
 
-  &::before
-    content: url("../images/icons/icon.check.mark.png")
-    display: block
-    margin-top: 2px
-    margin-right: 5px
-    position: absolute
-    top: -3px
-    left: 0
-
+	&::before
+		content: url("../images/icons/icon.check.mark.png")
+		display: block
+		margin-top: 2px
+		margin-right: 5px
+		position: absolute
+		top: -3px
+		left: 0
 
 @each $value in 100
-  .fw-box-proportional-#{$value}
-    position: relative
+	.fw-box-proportional-#{$value}
+		position: relative
 
-    &::after
-      display: block
-      content: ''
-      padding-top: unquote("#{$value}%")
+		&::after
+			display: block
+			content: ''
+			padding-top: unquote("#{$value}%")
 
-    > *
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      left: 0
+		> *
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+
+.fw-hidden
+	display: none
